@@ -1,33 +1,22 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/accounting/screens/accounting/accounting_home_screen.dart';
-import 'package:flutter_odoo/features/accounting/screens/employee/create_new_empoyee/create_new_employee_screen.dart';
-import 'package:flutter_odoo/features/accounting/screens/employee/employee_home_screen.dart';
+import 'package:flutter_odoo/features/accounting/view/accounting_home_screen.dart';
+import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/create_invoice.dart';
+import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/invoices.dart';
+import 'package:flutter_odoo/features/employee/create_new_empoyee/create_new_employee_screen.dart';
+import 'package:flutter_odoo/features/employee/view/employee_home_screen.dart';
 import 'package:flutter_odoo/home.dart';
+import 'package:get/get.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 
 class AppRouter {
   AppRouter._();
 
-  static Route<dynamic> onGenerateRoute(RouteSettings settings) {
-    switch (settings.name) {
-      case RoutesName.home:
-        return MaterialPageRoute(builder: (_) => const HomeScreen());
-      case RoutesName.employeeHome:
-        return MaterialPageRoute(builder: (_) => const EmployeeHomeScreen());
-      case RoutesName.createEmployee:
-        return MaterialPageRoute(
-          builder: (_) => const CreaateNewEmployeeScreen(),
-          settings: settings,
-        );
+  static final List<GetPage> pages = [
+    GetPage(name: RoutesName.home, page: () => const HomeScreen()),
+    GetPage(name: RoutesName.employeeHome, page: () => const EmployeeHomeScreen()),
+    GetPage(name: RoutesName.createEmployee, page: () => const CreaateNewEmployeeScreen()),
+    GetPage(name: RoutesName.customerInvoices, page: () => const CustomersInvoices()),
+    GetPage(name: RoutesName.accountingHome, page: () => const AccountingHomeScreen()),
+    GetPage(name: RoutesName.createInvoices, page: () => const CreateInvoice()),
 
-      case RoutesName.accountingHome:
-        return MaterialPageRoute(builder: (_) => AccountingHomeScreen());
-      default:
-        return MaterialPageRoute(
-          builder: (_) => Scaffold(
-            body: Center(child: Text('No route defined for ${settings.name}')),
-          ),
-        );
-    }
-  }
+  ];
 }

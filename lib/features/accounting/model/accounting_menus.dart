@@ -22,37 +22,25 @@ class AccountingMenus {
 
 
   // CUSTOMERS
-  static const customers = NavMenuData(
-    label: "Accounting",
-    sections: [
-      NavMenuSection(
-        title: "Transactions",
-        items: [
-          NavMenuItem(label: "Journal Entries", route: RoutesName.dashboard),
-        ],
-      ),
-      NavMenuSection(
-        title: "Assets & Liabilities",
-        items: [
-          NavMenuItem(label: "Assets", route: RoutesName.dashboard),
-          NavMenuItem(label: "Loans", route: RoutesName.dashboard),
-        ],
-      ),
-      NavMenuSection(
-        title: "Closing",
-        items: [
-          NavMenuItem(label: "Reconcile", route: RoutesName.dashboard),
-          NavMenuItem(label: "Tax Returns", route: RoutesName.dashboard),
-          NavMenuItem(label: "Lock Dates...", route: RoutesName.dashboard),
-        ],
-      ),
-    ],
-  );
+     static const customers =  NavMenuData(
+      label: "Customers",
+      sections: [
+        NavMenuSection(
+          items: [
+            NavMenuItem(label: "Invoices", route: RoutesName.customerInvoices),
+            NavMenuItem(label: "Credit Notes", route: RoutesName.dashboard),
+            NavMenuItem(label: "Payments", route: RoutesName.dashboard),
+            NavMenuItem(label: "Products", route: RoutesName.dashboard),
+            NavMenuItem(label: "Customers", route: RoutesName.dashboard),
+          ],
+        ),
+      ],
+    );
 
   // VENDORS
 
   // vendors
-  static const vendors = NavMenuData(
+  static const  vendors = NavMenuData(
     label: "Vendors",
     sections: [
       NavMenuSection(

@@ -40,11 +40,12 @@ class _NavMenuButtonState extends State<NavMenuButton> {
       child: widget.sections.isEmpty
           ? InkWell(onTap: widget.onTap, child: content)
           : PopupMenuButton<String>(
-              child: content,
               offset: const Offset(0, 40),
+               color: Colors.white,
               constraints: const BoxConstraints(minWidth: 220),
               itemBuilder: (context) => _buildMenuEntries(),
               onSelected: widget.onItemSelected,
+              child: content,
             ),
     );
   }
@@ -55,7 +56,7 @@ class _NavMenuButtonState extends State<NavMenuButton> {
     for (int s = 0; s < widget.sections.length; s++) {
       final section = widget.sections[s];
 
-      if (section.title.isNotEmpty) { // ✅ fixed — skip header if title is empty
+      if (section.title.isNotEmpty) { 
         entries.add(
           PopupMenuItem<String>(
             enabled: false,

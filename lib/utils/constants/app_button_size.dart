@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class AppButtonSize {
   AppButtonSize._();
 
@@ -16,4 +18,9 @@ class AppButtonSize {
   static const double borderRadiusXs = 2;
   static const double borderRadius = 8;
   static const double iconSize = 18;
+
+  static const EdgeInsets btnPaddingSymm = EdgeInsets.symmetric(
+    horizontal: 10,
+    vertical: 6,
+  );
 }

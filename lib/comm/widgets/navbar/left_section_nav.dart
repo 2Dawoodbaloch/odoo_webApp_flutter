@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
-import 'package:flutter_odoo/features/accounting/screens/employee/create_new_empoyee/create_new_employee_screen.dart';
+import 'package:flutter_odoo/features/employee/create_new_empoyee/create_new_employee_screen.dart';
 import 'package:flutter_odoo/utils/constants/app_icon_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
@@ -11,6 +11,7 @@ class LeftSectionNav extends StatelessWidget {
     super.key,
   });
 
+ 
   @override
   Widget build(BuildContext context) {
     return Expanded(

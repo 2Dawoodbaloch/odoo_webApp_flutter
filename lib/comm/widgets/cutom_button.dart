@@ -14,10 +14,12 @@ class CustomButton extends StatelessWidget {
     this.borderColor,      // ✅ null = no border
     this.borderWidth = 1,
     this.textSize = 14  ,
-    this.fontWeight 
+    this.fontWeight ,
+    this.padding
   });
 
   final String title;
+   final EdgeInsetsGeometry? padding;
   final double? width, height,textSize;
   final Color? backgroundColor, textColor;
   final double radius;
@@ -37,7 +39,7 @@ class CustomButton extends StatelessWidget {
       child: Container(
         width: width,
         height: height,
-        padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+        padding: padding ?? EdgeInsets.symmetric(horizontal: 6, vertical: 2),
         decoration: BoxDecoration(
           color: backgroundColor ?? Colors.white,
           borderRadius: BorderRadius.circular(radius),

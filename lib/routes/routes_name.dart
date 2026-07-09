@@ -7,5 +7,7 @@ class RoutesName {
   static const String createEmployee = '/create-employee';
   static const String accountingHome = '/accounting-home';
   static const String dashboard = "/dashboard";
+  static const String customerInvoices = "/CustomersInvoices";
+    static const String createInvoices = "/createInvoices";
 
 }
