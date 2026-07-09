@@ -20,7 +20,7 @@ class AppSpacing {
       EdgeInsets.all(20);
 
   static const EdgeInsets desktopPadding =
-      EdgeInsets.all(24);
+      EdgeInsets.symmetric(horizontal: 8,vertical: 8);
 
   // Common padding
   static const EdgeInsets containerPadding =
@@ -31,4 +31,8 @@ class AppSpacing {
 
   static const EdgeInsets verticalPadding =
       EdgeInsets.symmetric(vertical: 16);
+
+      // container padding horizental + vertical 
+    static const EdgeInsets bigContainer =
+      EdgeInsets.symmetric(vertical: 24,horizontal: 24);
 }

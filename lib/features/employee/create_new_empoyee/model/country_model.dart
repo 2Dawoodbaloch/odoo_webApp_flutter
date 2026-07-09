@@ -27,7 +27,7 @@ class CountryModel {
         'flagEmoji': flagEmoji,
       };
 
-  // ✅ needed for correct selection/comparison in dropdowns
+  
   @override
   bool operator ==(Object other) =>
       identical(this, other) || (other is CountryModel && other.isoCode == isoCode);

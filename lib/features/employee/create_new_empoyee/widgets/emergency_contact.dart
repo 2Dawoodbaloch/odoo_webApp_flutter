@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
-import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/custom_form_field.dart';
+import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 
 class Emergency_Contact extends StatelessWidget {
   const Emergency_Contact({

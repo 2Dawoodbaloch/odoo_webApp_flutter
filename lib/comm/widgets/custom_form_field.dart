@@ -64,13 +64,13 @@ class _CustomFormFieldState extends State<CustomFormField> {
 
   Color get _lineColor {
     if (!widget.enableBorder) return Colors.transparent;
-    if (_focusNode.hasFocus) return Colors.grey.shade600; 
+    if (_focusNode.hasFocus) return const Color.fromARGB(255, 34, 69, 35); 
     if (_isHovering) return Colors.grey.shade400;          
     if (_hasText) return Colors.grey.shade400;            
     return Colors.transparent;                             
   }
 
-  double get _lineWidth => _focusNode.hasFocus ? 1 : 0.5;
+  double get _lineWidth => _focusNode.hasFocus ? 0.5 : 0.5;
 
   @override
   Widget build(BuildContext context) {

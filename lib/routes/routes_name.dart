@@ -9,5 +9,6 @@ class RoutesName {
   static const String dashboard = "/dashboard";
   static const String customerInvoices = "/CustomersInvoices";
     static const String createInvoices = "/createInvoices";
-
+ static const String journalEntries = "/JournalEntries";
+  static const String createJournalEntries = "/CreateJournalEntries";
 }

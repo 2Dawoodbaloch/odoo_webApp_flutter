@@ -7,7 +7,7 @@ import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
-import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/custom_form_field.dart';
+import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 
 class WorkTabContent extends StatefulWidget {
   const WorkTabContent({super.key});
@@ -92,16 +92,12 @@ class _WorkTabContentState extends State<WorkTabContent> {
           
               // department
               Expanded(
-                child: LayoutBuilder(
-                  builder: (context, constraints) {
-                    return SearchableDropdownField<WorkLocation>(
-                      items: workLocation,
-                      labelBuilder: (m) => m.name,
-          
-                      onSelected: (value) =>
-                          setState(() => selectedWorkLocation = value),
-                    );
-                  },
+                child: SearchableDropdownField<WorkLocation>(
+                  items: workLocation,
+                  labelBuilder: (m) => m.name,
+                          
+                  onSelected: (value) =>
+                      setState(() => selectedWorkLocation = value),
                 ),
               ),
             ],

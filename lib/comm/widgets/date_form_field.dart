@@ -96,7 +96,7 @@ class _DateFormFieldState extends State<DateFormField> {
         onTap: _pickDate,
         decoration: InputDecoration(
           hintText: widget.hint,
-          hintStyle: TextStyle(color: Colors.grey.shade500),
+          hintStyle: TextStyle(color: Colors.grey.shade500,fontSize: 14),
           isDense: true,
           isCollapsed: true,
           border: InputBorder.none,

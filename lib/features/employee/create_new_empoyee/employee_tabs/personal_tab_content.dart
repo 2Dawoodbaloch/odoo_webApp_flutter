@@ -11,7 +11,7 @@ import 'package:flutter_odoo/features/employee/create_new_empoyee/employee_tabs/
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/private_contact.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
-import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/custom_form_field.dart';
+import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/file_uploaded_field.dart';
 
 class PersonalTabContent extends StatefulWidget {
@@ -133,15 +133,11 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
                       SizedBox(width: AppSpacing.lg),
 
                       Expanded(
-                        child: LayoutBuilder(
-                          builder: (context, constraints) {
-                            return SearchableDropdownField<CountryModel>(
-                              items: all,
-                              labelBuilder: (country) => country.name,
-                              onSelected: (value) =>
-                                  setState(() => selectedCountry = value),
-                            );
-                          },
+                        child: SearchableDropdownField<CountryModel>(
+                          items: all,
+                          labelBuilder: (country) => country.name,
+                          onSelected: (value) =>
+                              setState(() => selectedCountry = value),
                         ),
                       ),
                     ],
@@ -194,7 +190,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
                       TextWidget(text: "Visa No", labelWidth: labelWidth),
                       const SizedBox(width: 4),
 
-                      Expanded(child: CustomFormField(enableBorder: false)),
+                      Expanded(child: CustomFormField(enableBorder: true)),
                     ],
                   ),
 

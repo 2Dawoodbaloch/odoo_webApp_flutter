@@ -44,7 +44,6 @@ class _EmployeeTabsSectionState extends State<EmployeeTabsSection> {
                     ),
                     left: const BorderSide(color: Colors.grey),
                     right: const BorderSide(color: Colors.grey),
-                  
                   ),
                 ),
                 child: Text(
@@ -59,12 +58,10 @@ class _EmployeeTabsSectionState extends State<EmployeeTabsSection> {
           }),
         ),
 
-         SizedBox(height: AppSpacing.md),
+        SizedBox(height: AppSpacing.md),
 
         // Content
         _buildTabContent(),
-
-        
       ],
     );
   }

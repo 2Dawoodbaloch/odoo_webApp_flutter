@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
-import 'package:flutter_odoo/comm/widgets/navbar/custom_navbar.dart';
+import 'package:flutter_odoo/comm/widgets/navbar/custom_header.dart';
 import 'package:flutter_odoo/features/accounting/view/customers/invoices/model/column_model.dart';
 import 'package:flutter_odoo/features/accounting/view/customers/invoices/widget/list_view_header.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/accounting_navbar.dart';
@@ -58,7 +58,7 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
               AccountingNavBar(),
               SizedBox(height: AppSpacing.md),
               // NAVBAR
-              CustomNavBar(
+              CustomHeader(
                 title: "Invoices",
                 icon: Icons.settings,
                 actions: [
@@ -81,9 +81,11 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
                   ),
                 ],
               ),
+
               SizedBox(height: AppSpacing.sm),
               Divider(),
 
+// 
               ListViewHeader(
                 columns: const [
                   InvoiceHeaderModel(label: "Number", flex: 2),

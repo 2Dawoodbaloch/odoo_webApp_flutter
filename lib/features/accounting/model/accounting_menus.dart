@@ -63,7 +63,7 @@ class AccountingMenus {
       NavMenuSection(
         title: "Transactions",
         items: [
-          NavMenuItem(label: "Journal Entries", route: RoutesName.dashboard),
+          NavMenuItem(label: "Journal Entries", route: RoutesName.journalEntries),
         ],
       ),
       NavMenuSection(
