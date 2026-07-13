@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/bindings/app_bindings.dart';
 import 'package:flutter_odoo/routes/app_routes.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:get/get.dart';
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
+      initialBinding: AppBindings(),
     initialRoute: RoutesName.home,
       getPages: AppRouter.pages, 
     );

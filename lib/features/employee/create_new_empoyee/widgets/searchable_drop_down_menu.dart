@@ -9,6 +9,7 @@ class SearchableDropdownField<T> extends StatefulWidget {
     required this.onSelected,
     this.selectedItem,
     this.hintText,
+    this.isTable = false,
   });
 
   final List<T> items;
@@ -16,6 +17,7 @@ class SearchableDropdownField<T> extends StatefulWidget {
   final ValueChanged<T> onSelected;
   final T? selectedItem;
   final String? hintText;
+  final bool isTable;
 
   @override
   State<SearchableDropdownField<T>> createState() =>
@@ -153,11 +155,14 @@ class _SearchableDropdownFieldState<T>
   bool get _hasText => _controller.text.isNotEmpty;
 
   Color get _lineColor {
+    if (widget.isTable) return Colors.transparent;
     if (_focusNode.hasFocus) return Colors.black;
     if (_isHovering) return Colors.grey;
     if (_hasText) return Colors.grey; // ✅ new condition
     return Colors.transparent;
   }
+
+  double get _lineWidth => _focusNode.hasFocus ? 0.5 : 0.5;
 
   @override
   void dispose() {
@@ -177,13 +182,11 @@ class _SearchableDropdownFieldState<T>
         onEnter: (_) => setState(() => _isHovering = true),
         onExit: (_) => setState(() => _isHovering = false),
         child: TextField(
-          
           controller: _controller,
           focusNode: _focusNode,
           onChanged: _filter,
-          style: TextStyle( fontSize: 14),
+          style: TextStyle(fontSize: 14),
           decoration: InputDecoration(
-            
             suffixIcon: Icon(
               Icons.arrow_drop_down,
               color: _isHovering ? APPColors.hintText : Colors.transparent, //
@@ -198,12 +201,22 @@ class _SearchableDropdownFieldState<T>
             hintText: widget.hintText,
             hintStyle: TextStyle(color: APPColors.hintText),
             border: InputBorder.none,
-            enabledBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: _lineColor, width: 0.5),
-            ),
-            focusedBorder: UnderlineInputBorder(
-              borderSide: BorderSide(color: _lineColor, width: 0.5),
-            ),
+            enabledBorder: widget.isTable
+                ? InputBorder.none
+                : UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: _lineColor,
+                      width: _lineWidth,
+                    ),
+                  ),
+            focusedBorder: widget.isTable
+                ? InputBorder.none
+                : UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: _lineColor,
+                      width: _lineWidth,
+                    ),
+                  ),
           ),
         ),
       ),

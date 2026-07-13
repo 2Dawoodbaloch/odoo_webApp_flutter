@@ -5,7 +5,7 @@ class ListViewHeader extends StatelessWidget {
   const ListViewHeader({
     super.key,
     required this.columns,
-    this.showCheckbox = true,
+    this.showCheckbox = false,
     this.onSelectAllChanged,
     this.selectAllValue = false,
     this.trailingIcon,
@@ -47,11 +47,18 @@ class ListViewHeader extends StatelessWidget {
                   children: [
                     Text(
                       column.label,
-                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 13,
+                      ),
                     ),
                     if (column.sortable) ...[
                       const SizedBox(width: 4),
-                      Icon(Icons.arrow_drop_down, size: 16, color: Colors.grey.shade600),
+                      Icon(
+                        Icons.arrow_drop_down,
+                        size: 16,
+                        color: Colors.grey.shade600,
+                      ),
                     ],
                   ],
                 ),

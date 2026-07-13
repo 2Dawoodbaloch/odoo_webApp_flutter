@@ -8,7 +8,7 @@ class AppTextSize {
 
   // Titles
   // static const double titleDesktop = 22;
-    static const double titleDesktop = 16;
+  static const double titleDesktop = 16;
   static const double titleTablet = 20;
   static const double titleMobile = 18;
 
@@ -20,8 +20,10 @@ class AppTextSize {
   // Small text
   static const double small = 12;
 
-    // Button
+  // hint text
+  static const double hinText = 28;
+
+  // Button
   static const double buttonMd = 14;
   static const double buttonSm = 8;
-
 }

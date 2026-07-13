@@ -1,4 +1,7 @@
+import 'package:flutter_odoo/bindings/journal_binding.dart';
 import 'package:flutter_odoo/features/accounting/view/accounting_home_screen.dart';
+import 'package:flutter_odoo/features/accounting/view/charts_of_accounts/view/charts_accounts_home.dart';
+import 'package:flutter_odoo/features/accounting/view/charts_of_accounts/view/create_charts_accounts/create_charts_account.dart';
 import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/create_invoice.dart';
 import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/invoices.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/create_journal_entries.dart';
@@ -38,6 +41,22 @@ class AppRouter {
     GetPage(
       name: RoutesName.createJournalEntries,
       page: () => const CreateJournalEntries(),
+      binding: JournalBinding()
     ),
+
+   
+   // charts of accounts
+       GetPage(
+      name: RoutesName.chartsAccount,
+      page: () => const ChartsAccountsHomeScreen(),
+    ),
+        GetPage(
+      name: RoutesName.createChartsAccounts,
+      page: () => const CreateChartsAccountScreen(),
+    ),
+
+
+
+
   ];
 }

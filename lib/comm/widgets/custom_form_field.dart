@@ -11,8 +11,9 @@ class CustomFormField extends StatefulWidget {
     this.fontSize,
     this.suffixIcon,
     this.enableBorder = true,
-     this.suffixText, // ✅ new
+    this.suffixText, // ✅ new
     this.keyboardType, // ✅ new
+    this.isTable = false,
   });
 
   final TextInputType? keyboardType;
@@ -24,6 +25,7 @@ class CustomFormField extends StatefulWidget {
   final TextEditingController? controller;
   final ValueChanged<String>? onChanged;
   final bool enableBorder;
+  final bool isTable;
 
   @override
   State<CustomFormField> createState() => _CustomFormFieldState();
@@ -63,11 +65,13 @@ class _CustomFormFieldState extends State<CustomFormField> {
   bool get _hasText => _controller.text.isNotEmpty;
 
   Color get _lineColor {
+    if (widget.isTable)
+      return Colors.transparent; // ✅ always no line, no matter what
     if (!widget.enableBorder) return Colors.transparent;
-    if (_focusNode.hasFocus) return const Color.fromARGB(255, 34, 69, 35); 
-    if (_isHovering) return Colors.grey.shade400;          
-    if (_hasText) return Colors.grey.shade400;            
-    return Colors.transparent;                             
+    if (_focusNode.hasFocus) return const Color.fromARGB(255, 34, 69, 35);
+    if (_isHovering) return Colors.grey.shade400;
+    if (_hasText) return Colors.grey.shade400;
+    return Colors.transparent;
   }
 
   double get _lineWidth => _focusNode.hasFocus ? 0.5 : 0.5;
@@ -85,7 +89,7 @@ class _CustomFormFieldState extends State<CustomFormField> {
         style: TextStyle(fontSize: AppTextSize.bodyDesktop),
         decoration: InputDecoration(
           isDense: true,
-         
+
           contentPadding: EdgeInsets.zero,
           prefixIcon: widget.icon != null
               ? Icon(widget.icon, size: 18, color: Colors.grey.shade600)
@@ -96,16 +100,20 @@ class _CustomFormFieldState extends State<CustomFormField> {
           suffixIcon: widget.suffixIcon != null
               ? Icon(widget.suffixIcon, color: Colors.green)
               : null,
-            suffixText: widget.suffixText,
+          suffixText: widget.suffixText,
           hintText: widget.hint,
           hintStyle: TextStyle(color: Colors.grey.shade500),
           border: InputBorder.none,
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: _lineColor, width: _lineWidth),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: _lineColor, width: _lineWidth),
-          ),
+          enabledBorder: widget.isTable
+              ? InputBorder.none
+              : UnderlineInputBorder(
+                  borderSide: BorderSide(color: _lineColor, width: _lineWidth),
+                ),
+          focusedBorder: widget.isTable
+              ? InputBorder.none
+              : UnderlineInputBorder(
+                  borderSide: BorderSide(color: _lineColor, width: _lineWidth),
+                ),
         ),
       ),
     );
