@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
+import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/navbar/custom_header.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/widget/invoice_home_added_row.dart';
-import 'package:flutter_odoo/features/accounting/view/widgets/accounting_navbar.dart';
+import 'package:flutter_odoo/features/customers/invoices/widget/invoice_home_added_row.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
@@ -19,7 +19,6 @@ class CustomersInvoices extends StatefulWidget {
 }
 
 class _CustomersInvoicesState extends State<CustomersInvoices> {
-  bool selectAll = false;
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -51,11 +50,11 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
         child: Column(
           children: [
             // ACCOUNTING NAVBAR
-            AccountingNavBar(),
+            HomeNavBar(),
             SizedBox(height: AppSpacing.md),
         
             // NAVBAR
-            CustomHeader(
+            BreadcrumbBar(
               title: "Invoices",
               icon: Icons.settings,
               actions: [

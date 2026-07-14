@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
+import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/navbar/custom_header.dart';
-import 'package:flutter_odoo/features/accounting/view/widgets/accounting_navbar.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
@@ -49,10 +49,10 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: Column(
         children: [
-          AccountingNavBar(),
+         HomeNavBar(),
           //NAVBAR
           SizedBox(height: AppSpacing.sm),
-          CustomHeader(actions: [
+          BreadcrumbBar(actions: [
             CustomButton(title: "Create",backgroundColor: APPColors.btnPurple,textColor: APPColors.white  ,onPressed: () {
             Get.toNamed(RoutesName.createEmployee);
             },)
@@ -102,10 +102,10 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
       padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
       child: Column(
         children: [
-          AccountingNavBar(),
+          HomeNavBar(),
           //NAVBAR
           SizedBox(height: AppSpacing.sm),
-          CustomHeader(),
+          BreadcrumbBar(),
 
           const SizedBox(height: 8),
           const Divider(),
@@ -151,11 +151,11 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
       padding: EdgeInsets.all(12),
       child: Column(
         children: [
-          AccountingNavBar(),
+           HomeNavBar(),
           //NAVBAR
           SizedBox(height: AppSpacing.sm),
           //NAVBAR
-          CustomHeader(),
+          BreadcrumbBar(),
 
           const SizedBox(height: 8),
           const Divider(),

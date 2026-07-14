@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/app_footer.dart';
-import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
+import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/second_footer.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/widget/customer_invoice.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/widget/invoice_header.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/widget/reactive_invoice_buttons.dart';
-import 'package:flutter_odoo/features/accounting/view/widgets/accounting_navbar.dart';
-import 'package:flutter_odoo/utils/constants/app_button_size.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/customer_invoice.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/invoice_header.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/reactive_invoice_buttons.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
@@ -54,7 +52,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
         child: Column(
           children: [
             // ACCOUNTING NAVBAR
-            AccountingNavBar(),
+            HomeNavBar(),
             SizedBox(height: AppSpacing.md),
 
             // NAVBAR/ Header
@@ -65,7 +63,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
             SizedBox(height: AppSpacing.xxs),
 
             // 2nd  confirm + draft button
-            ReactiveInvoiceButton(),
+            ActionBar(),
 
             SizedBox(height: AppSpacing.sm),
 

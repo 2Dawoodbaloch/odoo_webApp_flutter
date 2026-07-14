@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
+import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/navbar/custom_header.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/model/column_model.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/widget/list_view_header.dart';
-import 'package:flutter_odoo/features/accounting/view/widgets/accounting_navbar.dart';
+import 'package:flutter_odoo/features/customers/invoices/model/column_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/widget/list_view_header.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
@@ -51,11 +51,11 @@ class _CreateChartsAccountScreenState extends State<CreateChartsAccountScreen> {
         child: Column(
           children: [
             //top nav bar
-            AccountingNavBar(),
+            HomeNavBar(),
             SizedBox(height: AppSpacing.sm),
 
             // HEADER
-            CustomHeader(
+            BreadcrumbBar(
               title: "Journal Entries",
               actions: [
                 CustomButton(

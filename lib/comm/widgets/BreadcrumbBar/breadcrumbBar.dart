@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/navbar/right_section_nav.dart';
 import 'package:flutter_odoo/comm/widgets/navbar/searchbar_field.dart';
 
-class CustomHeader extends StatelessWidget {
-  const CustomHeader({
+class BreadcrumbBar extends StatelessWidget {
+  const BreadcrumbBar({
     super.key,
      this.title,
     this.icon,
