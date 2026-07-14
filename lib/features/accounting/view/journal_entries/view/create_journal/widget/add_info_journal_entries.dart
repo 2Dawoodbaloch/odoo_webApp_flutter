@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
+import 'package:flutter_odoo/comm/widgets/date_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/tab_section.dart';
 import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/journal_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/controller/journal_controller.dart';
@@ -22,7 +23,6 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
 
   @override
   Widget build(BuildContext context) {
-    print("--------------------i am build");
     return Container(
       width: double.infinity,
       padding: AppSpacing.bigContainer,
@@ -36,6 +36,8 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
           CustomFormField(
             hint: "MISC/2026/000007",
             fontSize: AppTextSize.hinText,
+            enableBorder: true,
+            controller: controller.miscController,
           ),
           SizedBox(height: AppSpacing.md),
           Row(
@@ -49,7 +51,12 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
                     Row(
                       children: [
                         TextWidget(text: "Reference", labelWidth: 130),
-                        Expanded(child: CustomFormField(enableBorder: true)),
+                        Expanded(
+                          child: CustomFormField(
+                            enableBorder: true,
+                            controller: controller.referenceController,
+                          ),
+                        ),
                       ],
                     ),
                   ],
@@ -63,8 +70,20 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
                   children: [
                     Row(
                       children: [
-                        TextWidget(text: "Accounting Date", labelWidth: 130),
-                        Expanded(child: CustomFormField(hint: "19/10/2026")),
+                        const TextWidget(
+                          text: "Accounting Date",
+                          labelWidth: 130,
+                        ),
+                        Expanded(
+                          child: Obx(() {
+                            return DateFormField(
+                              controller: controller.accountingDateController,
+                              hint: "19/10/2026",
+                              selectedDate: controller.accountingDate.value,
+                              onDateSelected: (date) => controller.selectAccountingDate(date),
+                            );
+                          }),
+                        ),
                       ],
                     ),
                     SizedBox(height: AppSpacing.sm),
@@ -79,8 +98,7 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
                               items: controller.journalModel,
                               labelBuilder: (a) => a.name,
                               selectedItem: controller.selectedJournal.value,
-                              onSelected: controller
-                                  .selectJournal, // ✅ points directly at the controller method
+                              onSelected: controller.selectJournal, //
                             );
                           }),
                         ),

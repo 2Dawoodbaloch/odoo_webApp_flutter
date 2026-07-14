@@ -1,6 +1,4 @@
 import 'package:get/get.dart';
-
-// This is the "box" holding one finished entry's data — plain, no GetX inside it
 class JournalEntry {
   JournalEntry({
     required this.date,
@@ -24,7 +22,6 @@ class JournalEntry {
 class JournalEntriesController extends GetxController {
   final entries = <JournalEntry>[].obs;
 
-  // Create screen calls this when "Post" is tapped
   void addEntry(JournalEntry entry) {
     entries.add(entry);
   }

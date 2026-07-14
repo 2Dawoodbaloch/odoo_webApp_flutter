@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 class DateFormField extends StatefulWidget {
   const DateFormField({
     super.key,
+    this.controller, 
     this.hint = "mm/dd/yyyy",
-    this.initialDate,
+    this.selectedDate,
     this.onDateSelected,
   });
 
+  final TextEditingController? controller; 
   final String hint;
-  final DateTime? initialDate;
+  final DateTime? selectedDate; // caller tells us what's currently selected
   final ValueChanged<DateTime>? onDateSelected;
 
   @override
@@ -17,24 +19,7 @@ class DateFormField extends StatefulWidget {
 }
 
 class _DateFormFieldState extends State<DateFormField> {
-  late final TextEditingController _controller;
-  DateTime? _selectedDate;
   bool _isHovering = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _selectedDate = widget.initialDate;
-    _controller = TextEditingController(
-      text: _selectedDate != null ? _formatDate(_selectedDate!) : '',
-    );
-  }
-
-  String _formatDate(DateTime date) {
-    return "${date.month.toString().padLeft(2, '0')}/"
-        "${date.day.toString().padLeft(2, '0')}/"
-        "${date.year}";
-  }
 
   Future<void> _pickDate() async {
     final picked = await showDialog<DateTime>(
@@ -56,9 +41,9 @@ class _DateFormFieldState extends State<DateFormField> {
                 width: 320,
                 height: 380,
                 child: CalendarDatePicker(
-                  initialDate: _selectedDate ?? DateTime.now(),
+                  initialDate: widget.selectedDate ?? DateTime.now(),
                   firstDate: DateTime(1900),
-                  lastDate: DateTime.now(),
+                  lastDate: DateTime(2100),
                   onDateChanged: (date) => Navigator.of(context).pop(date),
                 ),
               ),
@@ -69,18 +54,8 @@ class _DateFormFieldState extends State<DateFormField> {
     );
 
     if (picked != null) {
-      setState(() {
-        _selectedDate = picked;
-        _controller.text = _formatDate(picked);
-      });
-      widget.onDateSelected?.call(picked);
+      widget.onDateSelected?.call(picked); 
     }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   Color get _lineColor => _isHovering ? Colors.grey.shade400 : Colors.transparent;
@@ -91,21 +66,17 @@ class _DateFormFieldState extends State<DateFormField> {
       onEnter: (_) => setState(() => _isHovering = true),
       onExit: (_) => setState(() => _isHovering = false),
       child: TextField(
-        controller: _controller,
+        controller: widget.controller!, 
         readOnly: true,
         onTap: _pickDate,
         decoration: InputDecoration(
           hintText: widget.hint,
-          hintStyle: TextStyle(color: Colors.grey.shade500,fontSize: 14),
+          hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 14),
           isDense: true,
           isCollapsed: true,
           border: InputBorder.none,
-          enabledBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: _lineColor),
-          ),
-          focusedBorder: UnderlineInputBorder(
-            borderSide: BorderSide(color: Colors.blue, width: 1.5),
-          ),
+          enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: _lineColor)),
+          focusedBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.blue, width: 1.5)),
         ),
       ),
     );

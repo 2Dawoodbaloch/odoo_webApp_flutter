@@ -1,14 +1,14 @@
-class  CustomerModel{
+class  AccountModel{
   final int id;
   final String name;
 
-  const CustomerModel({
+  const AccountModel({
     required this.id,
     required this.name,
   });
 
-  factory CustomerModel.fromJson(Map<String, dynamic> json) {
-    return CustomerModel(
+  factory AccountModel.fromJson(Map<String, dynamic> json) {
+    return AccountModel(
       id: json['id'],
       name: json['name'],
     );

@@ -1,3 +1,4 @@
+import 'package:flutter_odoo/bindings/invoice_binding.dart';
 import 'package:flutter_odoo/bindings/journal_binding.dart';
 import 'package:flutter_odoo/features/accounting/view/accounting_home_screen.dart';
 import 'package:flutter_odoo/features/accounting/view/charts_of_accounts/view/charts_accounts_home.dart';
@@ -28,12 +29,15 @@ class AppRouter {
     GetPage(
       name: RoutesName.customerInvoices,
       page: () => const CustomersInvoices(),
+      
     ),
     GetPage(
       name: RoutesName.accountingHome,
       page: () => const AccountingHomeScreen(),
     ),
-    GetPage(name: RoutesName.createInvoices, page: () => const CreateInvoice()),
+    GetPage(name: RoutesName.createInvoices,
+     page: () => const CreateInvoice(),
+     binding: InvoiceBinding()),
     GetPage(
       name: RoutesName.journalEntries,
       page: () => const JournalEntriesHome(),

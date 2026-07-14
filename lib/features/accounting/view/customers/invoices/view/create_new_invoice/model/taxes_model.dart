@@ -1,14 +1,14 @@
-class  CustomerModel{
+class  TaxModel{
   final int id;
   final String name;
 
-  const CustomerModel({
+  const TaxModel({
     required this.id,
     required this.name,
   });
 
-  factory CustomerModel.fromJson(Map<String, dynamic> json) {
-    return CustomerModel(
+  factory TaxModel.fromJson(Map<String, dynamic> json) {
+    return TaxModel(
       id: json['id'],
       name: json['name'],
     );
