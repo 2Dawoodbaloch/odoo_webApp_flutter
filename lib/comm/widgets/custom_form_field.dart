@@ -8,7 +8,7 @@ class CustomFormField extends StatefulWidget {
     this.icon,
     this.hint,
     this.onChanged,
-    this.fontSize,
+    this.fontSize = 14,
     this.suffixIcon,
     this.enableBorder = true,
     this.suffixText,

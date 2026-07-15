@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
+import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/controller/add_payment_controller.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
+import 'package:get/get.dart';
 
 class ActionBarPayment extends StatelessWidget {
   const ActionBarPayment({super.key});
 
+
   @override
   Widget build(BuildContext context) {
-  
+     final controller = Get.find<AddPaymentController>();
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -20,11 +23,13 @@ class ActionBarPayment extends StatelessWidget {
               backgroundColor: APPColors.btnPurple,
               textColor: Colors.white,
               padding: AppButtonSize.btnPaddingSymm,
-              onPressed: () {
-                         
-              },
+              onPressed:(){
+                
+                controller.postPayment();
+                Get.back();
+              }
             ),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             CustomButton(
               title: "Cancel",
               backgroundColor: APPColors.btnGrey,

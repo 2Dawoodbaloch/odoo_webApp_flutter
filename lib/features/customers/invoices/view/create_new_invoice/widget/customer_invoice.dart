@@ -76,13 +76,13 @@ class CustomerInvoice extends StatelessWidget {
                               controller: controller.invoiceDatecontroller,
                               selectedDate: controller.selectInvoiceDate.value,
                               onDateSelected: (date) =>
-                                  controller.selectInvoiceDate.value = date,
+                                  controller.selectInvoicDate(date),
                             );
                           }),
                         ),
                       ],
                     ),
-                    SizedBox(height: AppSpacing.sm),
+                    SizedBox(height: AppSpacing.spaceBtwInputFields),
 
                     // due date + payment terms
                     Row(
@@ -109,7 +109,7 @@ class CustomerInvoice extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: AppSpacing.sm),
+                        SizedBox(width: AppSpacing.spaceBtwInputFields),
                         // payment
                         Expanded(
                           child: Row(
@@ -134,7 +134,7 @@ class CustomerInvoice extends StatelessWidget {
                       ],
                     ),
                     // journal
-                    SizedBox(height: AppSpacing.sm),
+                    SizedBox(height: AppSpacing.spaceBtwInputFields),
                     // due date + payment terms
                     Row(
                       children: [

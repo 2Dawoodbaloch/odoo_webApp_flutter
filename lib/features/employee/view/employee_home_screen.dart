@@ -51,7 +51,7 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
         children: [
          HomeNavBar(),
           //NAVBAR
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           BreadcrumbBar(title: "Employee",
             actions: [
             CustomButton(title: "Create",backgroundColor: APPColors.btnPurple,textColor: APPColors.white  ,onPressed: () {
@@ -105,7 +105,7 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
         children: [
           HomeNavBar(),
           //NAVBAR
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           BreadcrumbBar(title: "Employee",),
 
           const SizedBox(height: 8),
@@ -154,7 +154,7 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
         children: [
            HomeNavBar(),
           //NAVBAR
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           //NAVBAR
           BreadcrumbBar(title: "Employee",),
 

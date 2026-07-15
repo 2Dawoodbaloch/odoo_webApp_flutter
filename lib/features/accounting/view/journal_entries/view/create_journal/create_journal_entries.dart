@@ -55,7 +55,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
             children: [
               //top nav bar
               HomeNavBar(),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // HEADER
               BreadcrumbBar(
@@ -78,7 +78,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
               // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
               ActionBar(),
 
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // add journal entries
               AddInfoJournalEntries(),
@@ -105,7 +105,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
             children: [
               //top nav bar
                HomeNavBar(),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // HEADER
               BreadcrumbBar(
@@ -127,7 +127,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
 
               // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
              ActionBar(),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // add journal entries
               AddInfoJournalEntries(),
@@ -154,7 +154,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
             children: [
               //top nav bar
               HomeNavBar(),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // HEADER
               BreadcrumbBar(
@@ -177,7 +177,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
               // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
               ActionBar(),
 
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // add journal entries
               AddInfoJournalEntries(),

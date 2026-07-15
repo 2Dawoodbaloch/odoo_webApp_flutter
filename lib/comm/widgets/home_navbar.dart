@@ -23,7 +23,7 @@ class HomeNavBar extends StatelessWidget {
             Row(
               children: [
                 Icon(Icons.logo_dev, color: Colors.red),
-                SizedBox(width: AppSpacing.sm),
+                SizedBox(width: AppSpacing.spaceBtwInputFields),
                 TextWidget(
                   text: "Accounting",
                   fontWeight: FontWeight.bold,

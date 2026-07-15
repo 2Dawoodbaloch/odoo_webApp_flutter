@@ -59,7 +59,7 @@ class _AccountingHomeScreenState extends State<AccountingHomeScreen> {
               SizedBox(height: AppSpacing.md),
               // NAVBAR
               BreadcrumbBar(title: "Accounting",),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
               Divider(),
               SizedBox(height: AppSpacing.lg),
 

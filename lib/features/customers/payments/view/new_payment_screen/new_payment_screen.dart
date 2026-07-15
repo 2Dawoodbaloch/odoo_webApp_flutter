@@ -45,50 +45,54 @@ class NewPaymentHomeScreen extends StatelessWidget {
       backgroundColor: APPColors.white,
 
       //navigation
-      body: Padding(
-        padding: AppSpacing.desktopPadding,
-
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // ACCOUNTING NAVBAR
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.md),
-
-            // NAVBAR/ Header
-            BreadcrumbBar(
-              title: "Customer Payments",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.createInvoices);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
-              ],
-            ),
-
-            SizedBox(height: AppSpacing.sm),
-            Divider(),
-            SizedBox(height: AppSpacing.xxs),
-
-            // 2nd  confirm + draft button
-            ActionBarPayment(),
-
-            SizedBox(height: AppSpacing.sm),
-
-            PaymentAddField(),
-            SizedBox(height: AppSpacing.lg),
-            // send message + log note + activity
-            SecondFooter(),
-            SizedBox(height: AppSpacing.lg),
-
-            // footer
-            AppFooter(),
-          ], // 2nd Row
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: AppSpacing.desktopPadding,
+        
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // ACCOUNTING NAVBAR
+              HomeNavBar(),
+              SizedBox(height: AppSpacing.md),
+        
+              // NAVBAR/ Header
+              BreadcrumbBar(
+                title: "Customer Payments",
+                actions: [
+                  CustomButton(
+                    title: "New",
+                    onPressed: () {
+                      Get.toNamed(RoutesName.createInvoices);
+                    },
+                    backgroundColor: APPColors.btnPurple,
+                    padding: AppButtonSize.btnPaddingSymm,
+                    textColor: APPColors.white,
+                  ),
+                ],
+              ),
+        
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
+              Divider(),
+              SizedBox(height: AppSpacing.xxs),
+        
+              // 2nd  confirm + draft button
+              ActionBarPayment(
+              ),
+              
+        
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
+        
+              PaymentAddField(),
+              SizedBox(height: AppSpacing.lg),
+              // send message + log note + activity
+              SecondFooter(),
+              SizedBox(height: AppSpacing.lg),
+        
+              // footer
+              AppFooter(),
+            ], // 2nd Row
+          ),
         ),
       ),
     );

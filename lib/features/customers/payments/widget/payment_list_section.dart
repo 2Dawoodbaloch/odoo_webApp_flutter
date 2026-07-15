@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/status_badge.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/empty_state_view.dart';
 import 'package:flutter_odoo/features/customers/payments/controller/payment_controller.dart';
 import 'package:get/get.dart';
@@ -33,16 +34,16 @@ class PaymentListSection extends StatelessWidget {
         // Rows — reactive to the shared controller
         Expanded(
           child: Obx(() {
-            if (controller.entries.isEmpty) {
+            if (controller.paymentsEntries.isEmpty) {
               return const EmptyStateView(
                 title: "No Payment entries yet",
                 description: "Create a Payment entry to see it listed here.",
               );
             }
             return ListView.builder(
-              itemCount: controller.entries.length,
+              itemCount: controller.paymentsEntries.length,
               itemBuilder: (context, index) {
-                final entry = controller.entries[index];
+                final entry = controller.paymentsEntries[index];
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   decoration: BoxDecoration(
@@ -51,12 +52,34 @@ class PaymentListSection extends StatelessWidget {
                   child: Row(
                     children: [
                       const SizedBox(width: 40),
-                       Expanded(child: Text(entry.number)),       // ✅ matches "Number"
-                      Expanded(child: Text(entry.customer)),     // ✅ matches "Customer"
-                      Expanded(child: Text(entry.invoiceDate)),  // ✅ matches "Invoice Date"
-                      Expanded(child: Text(entry.dueDate)),      // ✅ matches "Due Date"
-                      Expanded(child: Text(entry.tax)),          // ✅ matches "Tax"
-                      Expanded(child: Text("${entry.total} Rs.")), // ✅ matches "Total", fixed interpolation
+                      Expanded(
+                        child: Text(
+                          "${(entry.date.month)} ${entry.date.day}",
+                          style: TextStyle(color: Colors.black),
+                        ),
+                      ),
+                      Expanded(
+                        child: Text(entry.number ?? "", style: TextStyle(color: Colors.yellow)),
+                      ),
+                      Expanded(
+                        child: Text(entry.journal, style: TextStyle(color: Colors.green)),
+                      ),
+                      Expanded(
+                        child: Text(entry.customer, style: TextStyle(color: Colors.black)),
+                      ),
+                      Expanded(
+               
+                        child: Text(
+                          "${entry.amount.toStringAsFixed(2)} Rs.",
+                        
+                          style: TextStyle(color: Colors.blue),
+                        ),
+                      ),
+                    
+                      Expanded(
+                
+                        child: StatusBadge(status: entry.status),
+                      ),
                      
                     ],
                   ),

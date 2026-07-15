@@ -86,7 +86,7 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
                         ),
                       ],
                     ),
-                    SizedBox(height: AppSpacing.sm),
+                    SizedBox(height: AppSpacing.spaceBtwInputFields),
 
                     Row(
                       children: [

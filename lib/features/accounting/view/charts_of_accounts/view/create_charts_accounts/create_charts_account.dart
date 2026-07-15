@@ -52,7 +52,7 @@ class _CreateChartsAccountScreenState extends State<CreateChartsAccountScreen> {
           children: [
             //top nav bar
             HomeNavBar(),
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
 
             // HEADER
             BreadcrumbBar(

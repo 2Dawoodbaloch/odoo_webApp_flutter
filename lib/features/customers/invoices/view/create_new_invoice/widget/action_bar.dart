@@ -28,7 +28,7 @@ class ActionBar extends StatelessWidget {
                 Get.back();
               },
             ),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             CustomButton(
               title: "Cancel",
               backgroundColor: APPColors.btnGrey,

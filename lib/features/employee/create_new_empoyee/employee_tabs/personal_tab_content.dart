@@ -274,7 +274,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
                   // dependent children
                   Row(
                     children: [
@@ -331,7 +331,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
                   Row(
                     children: [
                       TextWidget(
@@ -446,7 +446,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
               Expanded(child: CustomFormField(enableBorder: false)),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // birthday
           Row(
             children: [
@@ -461,7 +461,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
 
           // place of birth + country
           Row(

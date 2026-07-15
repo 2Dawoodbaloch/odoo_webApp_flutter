@@ -66,7 +66,7 @@ class _PayrollTabContentState extends State<PayrollTabContent> {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
 
                   // Contract
                   Row(
@@ -83,7 +83,7 @@ class _PayrollTabContentState extends State<PayrollTabContent> {
                     ],
                   ),
 
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
 
                   // fixed term
                   Row(
@@ -101,7 +101,7 @@ class _PayrollTabContentState extends State<PayrollTabContent> {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
                   // Wage
                   Row(
                     children: [
@@ -130,7 +130,7 @@ class _PayrollTabContentState extends State<PayrollTabContent> {
                       ),
                     ],
                   ),
-                  SizedBox(height: AppSpacing.sm),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
                   // page category
                   Row(
                     children: [

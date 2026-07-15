@@ -20,12 +20,12 @@ class SecondFooter extends StatelessWidget {
               backgroundColor: APPColors.btnPurple,
               textColor: APPColors.textWhite,
             ),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             CustomButton(
               title: "Log note",
               backgroundColor: APPColors.btnGrey,
             ),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             CustomButton(
               title: "Activity",
               backgroundColor: APPColors.btnGrey,
@@ -35,9 +35,9 @@ class SecondFooter extends StatelessWidget {
         Row(
           children: [
             Icon(Icons.search),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             Icon(Icons.attach_file),
-            SizedBox(width: AppSpacing.sm),
+            SizedBox(width: AppSpacing.spaceBtwInputFields),
             Icon(Icons.person_outline),
           ],
         ),

@@ -50,7 +50,7 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
 
             //top nav bar
             HomeNavBar(),
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
 
             // HEADER
             BreadcrumbBar(
@@ -88,7 +88,7 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
           children: [
             //top nav bar
             HomeNavBar(),
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
 
             // HEADER
             BreadcrumbBar(
@@ -126,7 +126,7 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
           children: [
             //top nav bar
             HomeNavBar(),
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
 
             // HEADER
             BreadcrumbBar(

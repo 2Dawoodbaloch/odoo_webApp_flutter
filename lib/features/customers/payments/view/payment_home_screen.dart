@@ -70,7 +70,7 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
               ],
             ),
 
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
             Divider(),
             Expanded(child: PaymentListSection()),
           ],

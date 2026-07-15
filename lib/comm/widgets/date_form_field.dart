@@ -69,6 +69,7 @@ class _DateFormFieldState extends State<DateFormField> {
         controller: widget.controller!, 
         readOnly: true,
         onTap: _pickDate,
+         style: const TextStyle(fontSize: 14),
         decoration: InputDecoration(
           hintText: widget.hint,
           hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 14),

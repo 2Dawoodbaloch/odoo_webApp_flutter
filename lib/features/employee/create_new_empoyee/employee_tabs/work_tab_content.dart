@@ -102,7 +102,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // tuesday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -126,7 +126,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // wednesday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -150,7 +150,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // thursday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -174,7 +174,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // friday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -198,7 +198,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // saturday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -221,7 +221,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
               ),
             ],
           ),
-          SizedBox(height: AppSpacing.sm),
+          SizedBox(height: AppSpacing.spaceBtwInputFields),
           // sunday
           Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -271,7 +271,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
                 ),
               ),
               const Divider(),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
               // Work Address
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -292,7 +292,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
                   ),
                 ],
               ),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // Work Location
               Row(
@@ -354,7 +354,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
                   ),
                 ],
               ),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
               // Job Postion Section
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -374,7 +374,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
                   ),
                 ],
               ),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -391,7 +391,7 @@ class _WorkTabContentState extends State<WorkTabContent> {
                   ),
                 ],
               ),
-              SizedBox(height: AppSpacing.sm),
+              SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // manager section
               Row(

@@ -72,7 +72,7 @@ class CustomContainer extends StatelessWidget {
           color: color ?? Colors.grey,
         ),
         child: Padding(
-          padding: EdgeInsets.all(AppSpacing.sm),
+          padding: EdgeInsets.all(AppSpacing.spaceBtwInputFields),
           child: Center(
             child: content,
           ),

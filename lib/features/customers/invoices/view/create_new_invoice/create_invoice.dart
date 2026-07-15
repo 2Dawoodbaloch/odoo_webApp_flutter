@@ -58,14 +58,14 @@ class _CreateInvoiceState extends State<CreateInvoice> {
             // NAVBAR/ Header
             HeaderInvoice(),
 
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
             Divider(),
             SizedBox(height: AppSpacing.xxs),
 
             // 2nd  confirm + draft button
             ActionBar(),
 
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
 
             Expanded(
               child: SingleChildScrollView(

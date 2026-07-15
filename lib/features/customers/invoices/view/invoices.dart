@@ -78,7 +78,7 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
               ],
             ),
         
-            SizedBox(height: AppSpacing.sm),
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
             Divider(),
         
         
