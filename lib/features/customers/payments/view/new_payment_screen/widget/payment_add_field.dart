@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/customer_model.dart';
 import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/controller/add_payment_controller.dart';
 import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/widget/custom_radio_option.dart';
@@ -14,7 +12,6 @@ import 'package:get/instance_manager.dart';
 class PaymentAddField extends StatelessWidget {
   PaymentAddField({super.key});
   final controller = Get.find<AddPaymentController>();
-  final createInvoicecontroller = Get.find<CreateInvoiceController>();
   final double labelWidth = 130;
   @override
   Widget build(BuildContext context) {
@@ -44,37 +41,34 @@ class PaymentAddField extends StatelessWidget {
                           label: "Send",
                           value: PaymentType.send,
                           groupValue: controller.selectedType.value,
-                          onChanged: (value) =>
-                              controller.setPaymentType(value!),
+                          onChanged: (value) => controller.setPaymentType(value!),
                         ),
                         const SizedBox(width: 16),
                         CustomRadioOption<PaymentType>(
                           label: "Receive",
                           value: PaymentType.receive,
                           groupValue: controller.selectedType.value,
-                          onChanged: (value) =>
-                              controller.setPaymentType(value!),
+                          onChanged: (value) => controller.setPaymentType(value!),
                         ),
                       ],
                     ),
-                    SizedBox(height: AppSpacing.sm,),
-                     Expanded(
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    TextWidget(labelWidth: labelWidth, text: "Customer"),
-
-                    Expanded(
-                      child: SearchableDropdownField<CustomerModel>(
-                        items: controller.customer,
-                        labelBuilder: (m) => m.name,
-                        selectedItem: createInvoicecontroller.selectCustomer.value,
-                        onSelected: (value) => createInvoicecontroller.selectCustomer(value),
-                      ),
+                    SizedBox(height: AppSpacing.sm),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextWidget(labelWidth: labelWidth, text: "Customer"),
+                    
+                        Expanded(
+                          child: SearchableDropdownField<CustomerModel>(
+                            items: controller.customer,
+                            labelBuilder: (m) => m.name,
+                            selectedItem: controller.selectCustomer.value,
+                            onSelected: (value) =>
+                                controller.selectCustomer(value),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              ),
                   ],
                 ),
               ),

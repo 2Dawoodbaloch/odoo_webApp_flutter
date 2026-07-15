@@ -1,23 +1,6 @@
+import 'package:flutter_odoo/features/accounting/view/journal_entries/model/journal_entry.dart';
 import 'package:get/get.dart';
-class JournalEntry {
-  JournalEntry({
-    required this.date,
-    required this.number,
-    required this.partner,
-    required this.reference,
-    required this.journal,
-    required this.total,
-    required this.status,
-  });
 
-  final DateTime date;
-  final String number;
-  final String partner;
-  final String reference;
-  final String journal;
-  final double total;
-  final String status;
-}
 
 class JournalEntriesController extends GetxController {
   final entries = <JournalEntry>[].obs;

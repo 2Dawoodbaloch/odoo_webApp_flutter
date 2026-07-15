@@ -5,7 +5,7 @@ import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 
 class LeftSection extends StatelessWidget {
-  const LeftSection();
+  const LeftSection({super.key});
 
   @override
   Widget build(BuildContext context) {

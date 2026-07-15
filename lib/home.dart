@@ -3,7 +3,6 @@ import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:get/get_core/get_core.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 

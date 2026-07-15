@@ -1,4 +1,4 @@
-import 'package:file_picker/src/api/platform_file.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/date_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/help_tool_tip.dart';
@@ -96,7 +96,7 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
           crossAxisAlignment: CrossAxisAlignment.start, //
           children: [
             // privaate contact
-            Private_Contact(labelWidth: labelWidth),
+            PrivateContact(labelWidth: labelWidth),
             const SizedBox(width: AppSpacing.md),
 
             // Personal Informatio // Right Section
@@ -224,11 +224,11 @@ class _PersonalTabContentState extends State<PersonalTabContent> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // emergency contact
-            Emergency_Contact(labelWidth: labelWidth),
+            EmergencyContact(labelWidth: labelWidth),
 
             const SizedBox(width: AppSpacing.lg),
             // Location
-            Personal_Location(labelWidth: labelWidth),
+            PersonalLocation(labelWidth: labelWidth),
           ],
         ),
 

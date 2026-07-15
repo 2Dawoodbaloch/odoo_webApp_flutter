@@ -41,9 +41,6 @@ class _ImagePickerAvatarState extends State<ImagePickerAvatar> {
         imageQuality: 85,
       );
 
-
-print(picked?.path);
-
       if (picked == null) {
         // user cancelled the dialog — not an error
         setState(() => _isLoading = false);
@@ -60,7 +57,6 @@ print(picked?.path);
 
       widget.onImageSelected?.call(bytes);
     } catch (e, stackTrace) {
-  print(e);
   print(stackTrace);
 
   if (!mounted) return;

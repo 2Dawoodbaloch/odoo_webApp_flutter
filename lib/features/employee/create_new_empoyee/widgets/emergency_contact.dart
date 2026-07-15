@@ -4,8 +4,8 @@ import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 
-class Emergency_Contact extends StatelessWidget {
-  const Emergency_Contact({
+class EmergencyContact extends StatelessWidget {
+  const EmergencyContact({
     super.key,
     required this.labelWidth,
   });

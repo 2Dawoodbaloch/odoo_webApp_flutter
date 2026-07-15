@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/date_form_field.dart';
-import 'package:flutter_odoo/comm/widgets/help_tool_tip.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';

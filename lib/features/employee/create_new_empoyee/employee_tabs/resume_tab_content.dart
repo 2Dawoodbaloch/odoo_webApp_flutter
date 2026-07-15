@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/comm/widgets/custom_container.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
-import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';

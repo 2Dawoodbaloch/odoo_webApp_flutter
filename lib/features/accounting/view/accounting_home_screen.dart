@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/label_divider.dart';
-import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumbBar.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/dash_board_card.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';

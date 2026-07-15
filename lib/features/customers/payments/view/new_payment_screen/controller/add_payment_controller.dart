@@ -3,8 +3,8 @@ import 'package:flutter_odoo/utils/constants/enum.dart';
 import 'package:get/get.dart';
 
 class AddPaymentController extends GetxController {
-  // ---- CREATE form state ----
-  final Rx<PaymentType> selectedType = PaymentType.send.obs; // default = Send
+
+  final Rx<PaymentType> selectedType = PaymentType.send.obs; 
 
   void setPaymentType(PaymentType type) {
     selectedType.value = type;

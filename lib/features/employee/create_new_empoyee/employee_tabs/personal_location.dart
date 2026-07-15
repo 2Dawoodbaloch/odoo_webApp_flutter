@@ -4,8 +4,8 @@ import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 
-class Personal_Location extends StatelessWidget {
-  const Personal_Location({
+class PersonalLocation extends StatelessWidget {
+  const PersonalLocation({
     super.key,
     required this.labelWidth,
   });

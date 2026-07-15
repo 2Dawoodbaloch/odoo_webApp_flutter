@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/controller/journal_controller.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';

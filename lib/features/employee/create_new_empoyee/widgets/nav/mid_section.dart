@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/compact_tile.dart';
 
 class MidSection extends StatelessWidget {
-  const MidSection();
+  const MidSection({super.key});
 
   @override
   Widget build(BuildContext context) {

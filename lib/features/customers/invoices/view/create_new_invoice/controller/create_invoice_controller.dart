@@ -1,19 +1,24 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/features/customers/invoices/controller/controller.dart';
+import 'package:flutter_odoo/features/customers/invoices/model/invoice_entry.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/customer_model.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/journal_model.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/payment_terms.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/taxes_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/model/acount_model.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 
+//So every row gets its own controllers.No controller is shared.
 class InvoiceLine {
-  InvoiceLine() {
-    labelController = TextEditingController();
-    priceController = TextEditingController();
-    amountController = TextEditingController();
-  }
+  // InvoiceLine() {
+  //   labelController = TextEditingController();
+  //   priceController = TextEditingController();
+  //   amountController = TextEditingController();
+  // }
+
+  final labelController = TextEditingController();
+  final priceController = TextEditingController();
+  final amountController = TextEditingController();
 
   AccountModel? account;
   TaxModel? tax;
@@ -21,16 +26,12 @@ class InvoiceLine {
   double price = 0;
   double amount = 0;
 
-  late final TextEditingController labelController;
-  late final TextEditingController priceController;
-  late final TextEditingController amountController;
 
-  void dispose() {
-    // ✅ add this
-    labelController.dispose();
-    priceController.dispose();
-    amountController.dispose();
-  }
+void dispose() {
+  labelController.dispose();
+  priceController.dispose();
+  amountController.dispose();
+}
 }
 
 class CreateInvoiceController extends GetxController {
