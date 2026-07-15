@@ -12,7 +12,7 @@ class NavMenuSection {
 
 class NavMenuData {
   const NavMenuData({required this.label, this.sections = const [], this.route});
-  final String label; // top-level nav label, e.g. "Accounting"
+  final String label; 
   final List<NavMenuSection> sections;
   final String? route; 
 }

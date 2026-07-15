@@ -2,27 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/date_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/tab_section.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/customer_model.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/journal_model.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/payment_terms.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/widget/invoice_line_table.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/customer_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/journal_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/payment_terms.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/invoice_line_table.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:get/get.dart'; // ✅ single import covers Get.find, Obx, GetxController, everything
 
-
 class CustomerInvoice extends StatelessWidget {
   const CustomerInvoice({super.key});
-
 
   final double labelWidth = 130;
 
   @override
   Widget build(BuildContext context) {
-    
-  final controller = Get.find<CreateInvoiceController>();
+    final controller = Get.find<CreateInvoiceController>();
     return Container(
       width: double.infinity,
       padding: AppSpacing.bigContainer,
@@ -40,7 +37,6 @@ class CustomerInvoice extends StatelessWidget {
           CustomFormField(
             hint: "INV/2026/000001",
             controller: controller.invController,
-            
           ),
           SizedBox(height: AppSpacing.md),
           Row(
@@ -48,19 +44,16 @@ class CustomerInvoice extends StatelessWidget {
               Expanded(
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.start,
-
                   children: [
                     TextWidget(labelWidth: labelWidth, text: "Customer"),
 
                     Expanded(
                       child: SearchableDropdownField<CustomerModel>(
-                          items: controller.customer,
-                          labelBuilder: (m) => m.name,
-                          selectedItem: controller.selectCustomer.value,
-                          onSelected: (value) =>
-                              controller.selectCustomer(value),
-                        ),
-                      
+                        items: controller.customer,
+                        labelBuilder: (m) => m.name,
+                        selectedItem: controller.selectCustomer.value,
+                        onSelected: (value) => controller.selectCustomer(value),
+                      ),
                     ),
                   ],
                 ),
@@ -128,7 +121,8 @@ class CustomerInvoice extends StatelessWidget {
                                     items: controller.paymentTerms,
                                     hintText: "Payment terms",
                                     labelBuilder: (m) => m.name,
-                                    selectedItem: controller.selectPaymentTerms.value,
+                                    selectedItem:
+                                        controller.selectPaymentTerms.value,
                                     onSelected: (terms) =>
                                         controller.paymentCondition(terms),
                                   ),

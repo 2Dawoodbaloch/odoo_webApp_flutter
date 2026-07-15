@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/model/column_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/model/column_model.dart';
 
 class ListViewHeader extends StatelessWidget {
   const ListViewHeader({

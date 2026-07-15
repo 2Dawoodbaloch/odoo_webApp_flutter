@@ -1,18 +1,17 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/comm/widgets/navbar/right_section_nav.dart';
-import 'package:flutter_odoo/comm/widgets/navbar/searchbar_field.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/right_section_nav.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/searchbar_field.dart';
 
 class BreadcrumbBar extends StatelessWidget {
   const BreadcrumbBar({
     super.key,
-     this.title,
+    required this.title,
     this.icon,
     this.actions = const [],
     this.showSearchBar = true,
   });
 
-  final String? title;
+  final String title;
   final IconData? icon;
 
   /// Buttons or widgets shown before title

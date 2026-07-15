@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/controller/controller.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/customer_model.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/journal_model.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/payment_terms.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/taxes_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/controller/controller.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/customer_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/journal_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/payment_terms.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/taxes_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/model/acount_model.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';

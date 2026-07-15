@@ -1,4 +1,4 @@
-import 'package:flutter_odoo/features/accounting/model/nav_menu_data.dart';
+import 'package:flutter_odoo/comm/model/navbar/nav_menu_data.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 
 class AccountingMenus {
@@ -29,7 +29,7 @@ class AccountingMenus {
           items: [
             NavMenuItem(label: "Invoices", route: RoutesName.customerInvoices),
             NavMenuItem(label: "Credit Notes", route: RoutesName.dashboard),
-            NavMenuItem(label: "Payments", route: RoutesName.dashboard),
+            NavMenuItem(label: "Payments", route: RoutesName.customerPayments),
             NavMenuItem(label: "Products", route: RoutesName.dashboard),
             NavMenuItem(label: "Customers", route: RoutesName.dashboard),
           ],

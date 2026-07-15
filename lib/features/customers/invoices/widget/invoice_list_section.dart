@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/accounting/view/journal_entries/controller/journal_entries_controller.dart';
+import 'package:flutter_odoo/features/customers/invoices/controller/controller.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/empty_state_view.dart';
 import 'package:get/get.dart';
 
-class JournalHomeAddedRowScreen extends StatelessWidget {
-  const JournalHomeAddedRowScreen({super.key});
+class InvoiceListSection extends StatelessWidget {
+  const InvoiceListSection({super.key});
 
-  final headerLabels = const ["Date", "Number", "Partner", "Reference", "Journal", "Total", "Status"];
+   final headerLabels = const ["Number", "Customer", "Invoice Date", "Due Date", "Tax", "Total", "Amount"];
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<JournalEntriesController>();
+    final controller = Get.find<InvoiceEntriesController>();
 
     return Column(
       children: [
@@ -51,13 +51,13 @@ class JournalHomeAddedRowScreen extends StatelessWidget {
                   child: Row(
                     children: [
                       const SizedBox(width: 40),
-                      Expanded(child: Text("${entry.date.month}/${entry.date.day}")),
-                      Expanded(child: Text(entry.number)),
-                      Expanded(child: Text(entry.partner)),
-                      Expanded(child: Text(entry.reference)),
-                      Expanded(child: Text(entry.journal)),
-                      Expanded(child: Text("${entry.total.toStringAsFixed(2)} Rs.")),
-                      Expanded(child: Text(entry.status)),
+                       Expanded(child: Text(entry.number)),       // ✅ matches "Number"
+                      Expanded(child: Text(entry.customer)),     // ✅ matches "Customer"
+                      Expanded(child: Text(entry.invoiceDate)),  // ✅ matches "Invoice Date"
+                      Expanded(child: Text(entry.dueDate)),      // ✅ matches "Due Date"
+                      Expanded(child: Text(entry.tax)),          // ✅ matches "Tax"
+                      Expanded(child: Text("${entry.total} Rs.")), // ✅ matches "Total", fixed interpolation
+                      Expanded(child: Text(entry.amount)),       // ✅ matches "Amount"
                     ],
                   ),
                 );

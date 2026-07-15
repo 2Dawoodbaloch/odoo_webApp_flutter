@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/custom_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/date_form_field.dart';
 import 'package:flutter_odoo/comm/widgets/tab_section.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/journal_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/journal_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/controller/journal_controller.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/widget/journal_line_table.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';

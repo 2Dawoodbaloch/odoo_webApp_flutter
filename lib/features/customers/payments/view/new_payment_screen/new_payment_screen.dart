@@ -1,24 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumbBar.dart';
+import 'package:flutter_odoo/comm/widgets/app_footer.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
-import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumbBar.dart';
-import 'package:flutter_odoo/features/customers/payments/widget/payment_list_section.dart';
+import 'package:flutter_odoo/comm/widgets/second_footer.dart';
+import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/widget/action_bar_payment.dart';
+import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/widget/payment_add_field.dart';
+import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
+import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 
-class PaymentHomeScreen extends StatefulWidget {
-  const PaymentHomeScreen({super.key});
+class NewPaymentHomeScreen extends StatelessWidget {
+  const NewPaymentHomeScreen({super.key});
 
-  @override
-  State<PaymentHomeScreen> createState() => _PaymentHomeScreenState();
-}
-
-class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -41,27 +41,30 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
     );
   }
 
+  // Desktop Layout
   Widget _desktopLayout() {
     return Scaffold(
       backgroundColor: APPColors.white,
+
       //navigation
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        padding: AppSpacing.desktopPadding,
+
         child: Column(
-       
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // ACCOUNTING NAVBAR
             HomeNavBar(),
             SizedBox(height: AppSpacing.md),
 
-            // NAVBAR
+            // NAVBAR/ Header
             BreadcrumbBar(
               title: "Customer Payments",
               actions: [
                 CustomButton(
                   title: "New",
                   onPressed: () {
-                    Get.toNamed(RoutesName.newPayment);
+                    Get.toNamed(RoutesName.createInvoices);
                   },
                   backgroundColor: APPColors.btnPurple,
                   padding: AppButtonSize.btnPaddingSymm,
@@ -72,8 +75,22 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
 
             SizedBox(height: AppSpacing.sm),
             Divider(),
-            Expanded(child: PaymentListSection()),
-          ],
+            SizedBox(height: AppSpacing.xxs),
+
+            // 2nd  confirm + draft button
+            ActionBarPayment(),
+
+            SizedBox(height: AppSpacing.sm),
+
+            PaymentAddField(),
+            SizedBox(height: AppSpacing.lg),
+            // send message + log note + activity
+            SecondFooter(),
+            SizedBox(height: AppSpacing.lg),
+
+            // footer
+            AppFooter(),
+          ], // 2nd Row
         ),
       ),
     );

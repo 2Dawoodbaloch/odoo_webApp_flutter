@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/journal_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/journal_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/controller/journal_entries_controller.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/model/acount_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/model/partner_model.dart';

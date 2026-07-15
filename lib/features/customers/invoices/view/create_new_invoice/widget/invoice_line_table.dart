@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
-import 'package:flutter_odoo/features/accounting/view/customers/invoices/view/create_new_invoice/model/taxes_model.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
+import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/model/taxes_model.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/model/acount_model.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:get/get.dart';

@@ -18,4 +18,8 @@ class RoutesName {
   // charts of account
   static const String chartsAccount = "/chartsOfAccounts";
   static const String createChartsAccounts = "/createChartsOfAccounts";
+
+  // payments
+    static const String customerPayments = "/customerPayments";
+    static const String newPayment = "/newPayment";
 }

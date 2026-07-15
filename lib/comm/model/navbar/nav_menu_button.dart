@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/accounting/model/nav_menu_data.dart';
+import 'package:flutter_odoo/comm/model/navbar/nav_menu_data.dart';
 
 class NavMenuButton extends StatefulWidget {
   const NavMenuButton({

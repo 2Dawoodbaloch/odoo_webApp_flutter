@@ -51,3 +51,6 @@ enum ScheduleType {
     }
   }
 }
+
+
+enum PaymentType { send, receive }

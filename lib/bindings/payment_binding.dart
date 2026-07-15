@@ -1,11 +1,12 @@
-import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/controller/create_invoice_controller.dart';
+
+import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen/controller/add_payment_controller.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/bindings_interface.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 
-class InvoiceBinding extends Bindings {
+class PaymentBinding extends Bindings {
   @override
   void dependencies() {
-    Get.put(CreateInvoiceController(),); 
+    Get.put(AddPaymentController()); 
   }
 }
