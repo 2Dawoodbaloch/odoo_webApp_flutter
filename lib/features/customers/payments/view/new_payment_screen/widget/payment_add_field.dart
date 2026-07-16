@@ -73,7 +73,7 @@ class PaymentAddField extends StatelessWidget {
                               labelBuilder: (m) => m.name,
                               selectedItem: controller.selectCustomer.value,
                               onSelected: (value) =>
-                                  controller.selectCustomer(value),
+                                  controller.customerChoose(value),
                             ),
                           ),
                         ),
@@ -127,7 +127,7 @@ class PaymentAddField extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(width: AppSpacing.spaceBtwSections),
+              SizedBox(width: AppSpacing.spaceBtwRwCl),
               // right section
               Expanded(
                 child: Column(

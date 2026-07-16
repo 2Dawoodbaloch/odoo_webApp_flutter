@@ -80,10 +80,78 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
   }
 
   Widget _tabletLayout() {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: APPColors.white,
+      //navigation
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        child: Column(
+       
+          children: [
+            // ACCOUNTING NAVBAR
+            HomeNavBar(),
+            SizedBox(height: AppSpacing.md),
+
+            // NAVBAR
+            BreadcrumbBar(
+              title: "Customer Payments",
+              actions: [
+                CustomButton(
+                  title: "New",
+                  onPressed: () {
+                    Get.toNamed(RoutesName.newPayment);
+                  },
+                  backgroundColor: APPColors.btnPurple,
+                  padding: AppButtonSize.btnPaddingSymm,
+                  textColor: APPColors.white,
+                ),
+              ],
+            ),
+
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
+            Divider(),
+            Expanded(child: PaymentListSection()),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget _mobileLayout() {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: APPColors.white,
+      //navigation
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+        child: Column(
+       
+          children: [
+            // ACCOUNTING NAVBAR
+            HomeNavBar(),
+            SizedBox(height: AppSpacing.md),
+
+            // NAVBAR
+            BreadcrumbBar(
+              title: "Customer Payments",
+              actions: [
+                CustomButton(
+                  title: "New",
+                  onPressed: () {
+                    Get.toNamed(RoutesName.newPayment);
+                  },
+                  backgroundColor: APPColors.btnPurple,
+                  padding: AppButtonSize.btnPaddingSymm,
+                  textColor: APPColors.white,
+                ),
+              ],
+            ),
+
+            SizedBox(height: AppSpacing.spaceBtwInputFields),
+            Divider(),
+            Expanded(child: PaymentListSection()),
+          ],
+        ),
+      ),
+    );
   }
 }

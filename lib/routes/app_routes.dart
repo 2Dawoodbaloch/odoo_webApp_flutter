@@ -1,3 +1,5 @@
+import 'package:flutter_odoo/bindings/charts_of_account_binding.dart';
+import 'package:flutter_odoo/bindings/create_chartsof_account_binding.dart';
 import 'package:flutter_odoo/bindings/create_invoice_binding.dart';
 import 'package:flutter_odoo/bindings/create_journal_binding.dart';
 import 'package:flutter_odoo/bindings/invoice_binding.dart';
@@ -5,8 +7,8 @@ import 'package:flutter_odoo/bindings/journal_binding.dart';
 import 'package:flutter_odoo/bindings/add_payment_binding.dart';
 import 'package:flutter_odoo/bindings/payment_binding.dart';
 import 'package:flutter_odoo/features/accounting/view/accounting_home_screen.dart';
-import 'package:flutter_odoo/features/accounting/view/charts_of_accounts/view/charts_accounts_home.dart';
-import 'package:flutter_odoo/features/accounting/view/charts_of_accounts/view/create_charts_accounts/create_charts_account.dart';
+import 'package:flutter_odoo/features/charts_of_accounts/view/charts_of_accounts.dart';
+import 'package:flutter_odoo/features/charts_of_accounts/view/create_charts_of_accounts/create_charts_of_account.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/create_invoice.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/invoices.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/create_journal_entries.dart';
@@ -67,11 +69,14 @@ class AppRouter {
     // charts of accounts
     GetPage(
       name: RoutesName.chartsAccount,
-      page: () => const ChartsAccountsHomeScreen(),
+      page: () => const ChartsOfAccounts(),
+      binding: ChartsOfAccountBinding()
+      
     ),
     GetPage(
       name: RoutesName.createChartsAccounts,
-      page: () => const CreateChartsAccountScreen(),
+      page: () => const CreateChartsOfAccount(),
+      binding: CreateChartsofAccountBinding()
     ),
 
     // customer payments

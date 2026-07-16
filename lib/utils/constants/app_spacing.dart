@@ -14,9 +14,14 @@ class AppSpacing {
 
   // static const double spaceBtwEntries = 8;
     static const double spaceBtwInputFields = 8;
-    
+
+/// Space between the top navigation bar and the breadcrumb/page-title row below it.
+  static const double navToBreadcrumbGap = 14;
+
+  /// Space between the breadcrumb/page-title row and the main page content (list, form, table).
+  static const double breadcrumbToContentGap = 8;
     // space btw right and left columns in rows
-    static const double spaceBtwSections = 30;
+    static const double spaceBtwRwCl = 30;
 
   // Screen padding
   static const EdgeInsets mobilePadding = EdgeInsets.all(16);

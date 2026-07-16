@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/features/customers/invoices/controller/controller.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/empty_state_view.dart';
+import 'package:flutter_odoo/features/charts_of_accounts/controller/chartsof_account_controller.dart';
 import 'package:get/get.dart';
 
-class InvoiceListSection extends StatelessWidget {
-  const InvoiceListSection({super.key});
+class ChartsListSection extends StatelessWidget {
+  const ChartsListSection({super.key});
 
-   final headerLabels = const ["Number", "Customer", "Invoice Date", "Due Date", "Tax", "Total", "Amount"];
+   final headerLabels = const ["Code", "Account Name", "Type", "Payment Reconcillation",];
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<InvoiceEntriesController>();
+    final controller = Get.find<ChartOfAccountsController>();
 
     return Column(
       children: [
@@ -33,16 +33,16 @@ class InvoiceListSection extends StatelessWidget {
         // Rows — reactive to the shared controller
         Expanded(
           child: Obx(() {
-            if (controller.entries.isEmpty) {
+            if (controller.accountEntries.isEmpty) {
               return const EmptyStateView(
-                title: "No Invoices entries yet",
-                description: "Create a Invoices entry to see it listed here.",
+               title: "No accounts yet",
+                description: "Add an account to see it listed here.",
               );
             }
             return ListView.builder(
-              itemCount: controller.entries.length,
+              itemCount: controller.accountEntries.length,
               itemBuilder: (context, index) {
-                final entry = controller.entries[index];
+                final entry = controller.accountEntries[index];
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   decoration: BoxDecoration(
@@ -51,13 +51,19 @@ class InvoiceListSection extends StatelessWidget {
                   child: Row(
                     children: [
                       const SizedBox(width: 40),
-                       Expanded(child: Text(entry.number)),       // ✅ matches "Number"
-                      Expanded(child: Text(entry.customer)),     // ✅ matches "Customer"
-                      Expanded(child: Text(entry.invoiceDate)),  // ✅ matches "Invoice Date"
-                      Expanded(child: Text(entry.dueDate)),      // ✅ matches "Due Date"
-                      Expanded(child: Text(entry.tax)),          // ✅ matches "Tax"
-                      Expanded(child: Text("${entry.total} Rs.")), // ✅ matches "Total", fixed interpolation
-                      Expanded(child: Text(entry.amount)),       // ✅ matches "Amount"
+                     Expanded(child: Text(entry.code)),
+                      Expanded(child: Text(entry.name)),
+                      Expanded(child: Text(entry.type)),
+                      Expanded(
+                        child: Switch(
+                          value: entry.paymentReconciliation,
+                          onChanged: (value) => controller.toggleReconciliation(index, value),
+                          activeColor: Colors.white,
+                          activeTrackColor: Colors.green.shade600,
+                          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                        ),
+                      ),
+                     
                     ],
                   ),
                 );

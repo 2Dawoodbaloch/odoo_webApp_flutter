@@ -200,7 +200,7 @@ class AccountingMenus {
             items: [
               NavMenuItem(
                 label: "Chart of Accounts",
-                route: RoutesName.dashboard,
+                route: RoutesName.chartsAccount,
               ),
               NavMenuItem(label: "Taxes", route: RoutesName.dashboard),
               NavMenuItem(label: "Journals", route: RoutesName.dashboard),
