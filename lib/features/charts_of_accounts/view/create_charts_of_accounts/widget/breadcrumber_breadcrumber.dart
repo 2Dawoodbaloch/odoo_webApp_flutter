@@ -27,7 +27,7 @@ class ChartsBreadCrumber extends StatelessWidget {
             Get.back();
           },
           backgroundColor: APPColors.btnPurple,
-          padding: AppButtonSize.btnPaddingSymm,
+          padding: AppButtons.btnPaddingSymm,
           textColor: APPColors.white,
         ),
       ],

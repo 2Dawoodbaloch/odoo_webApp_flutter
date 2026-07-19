@@ -42,39 +42,49 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
 
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Padding(
-        padding: AppSpacing.desktopPadding,
-        child: Column(
-          children: [
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                children: [
+                  //top nav bar
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-            //top nav bar
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.spaceBtwInputFields),
+                  // HEADER
+                  BreadcrumbBar(
+                    title: "Journal Entries",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        backgroundColor: APPColors.btnPurple,
+                        textColor: APPColors.white,
+                        padding: AppButtons.btnPaddingSymm,
+                        onPressed: () =>
+                            Get.toNamed(RoutesName.createJournalEntries),
+                      ),
+                    ],
+                    icon: Icons.settings,
+                  ),
 
-            // HEADER
-            BreadcrumbBar(
-              title: "Journal Entries",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  backgroundColor: APPColors.btnPurple,
-                  textColor: APPColors.white,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
-                ),
-              ],
-              icon: Icons.settings,
+                  SizedBox(height: AppSpacing.xs),
+                ],
+              ),
             ),
+          ),
+          Divider(height: 1),
 
-            SizedBox(height: AppSpacing.xs),
-
-            Divider(),
-
-            Expanded(child: JournalListSection()),
-
-          ],
-        ),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: JournalListSection(),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -98,7 +108,7 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
                   title: "New",
                   backgroundColor: APPColors.btnPurple,
                   textColor: APPColors.white,
-                  padding: AppButtonSize.btnPaddingSymm,
+                  padding: AppButtons.btnPaddingSymm,
                   onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
                 ),
               ],
@@ -110,7 +120,6 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
             Divider(),
 
             Expanded(child: JournalListSection()),
-
           ],
         ),
       ),
@@ -136,7 +145,7 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
                   title: "New",
                   backgroundColor: APPColors.btnPurple,
                   textColor: APPColors.white,
-                  padding: AppButtonSize.btnPaddingSymm,
+                  padding: AppButtons.btnPaddingSymm,
                   onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
                 ),
               ],
@@ -148,7 +157,6 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
             Divider(),
 
             Expanded(child: JournalListSection()),
-
           ],
         ),
       ),

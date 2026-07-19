@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class AppButtonSize {
-  AppButtonSize._();
+class AppButtons {
+  AppButtons._();
 
   static const double fontSize = 12;
 

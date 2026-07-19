@@ -10,17 +10,19 @@ class RoutesName {
   // invoices
   static const String customerInvoices = "/CustomersInvoices";
   static const String createInvoices = "/createInvoices";
-  
-  // journal 
+
+  // journal
   static const String journalEntries = "/JournalEntries";
   static const String createJournalEntries = "/CreateJournalEntries";
-  
+
   // charts of account
   static const String chartsAccount = "/chartsOfAccounts";
   static const String createChartsAccounts = "/createChartsOfAccounts";
 
   // payments
-    static const String customerPayments = "/customerPayments";
-    static const String newPayment = "/newPayment";
-  
+  static const String customerPayments = "/customerPayments";
+  static const String newPayment = "/newPayment";
+
+  // general ledger
+  static const String generalLedger = "/generalLedger";
 }

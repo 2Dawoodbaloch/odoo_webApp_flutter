@@ -9,6 +9,7 @@ import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/search
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
+import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 class AddInfoJournalEntries extends StatefulWidget {
@@ -27,8 +28,8 @@ class _AddInfoJournalEntriesState extends State<AddInfoJournalEntries> {
       width: double.infinity,
       padding: AppSpacing.bigContainer,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.grey.shade300),
+        color: APPColors.navBackgroundColor,
+        border: Border.all(color: APPColors.contentBorderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/status_badge.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/empty_state_view.dart';
 import 'package:flutter_odoo/features/customers/payments/controller/payment_controller.dart';
+import 'package:flutter_odoo/utils/constants/app_spacing.dart';
+import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 class PaymentListSection extends StatelessWidget {
@@ -16,9 +18,9 @@ class PaymentListSection extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          padding: AppSpacing.desktopPadding,
           decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
+            border: Border(bottom: BorderSide(color: APPColors.contentBorderColor)),
           ),
           child: Row(
             children: [
@@ -47,7 +49,8 @@ class PaymentListSection extends StatelessWidget {
                 return Container(
                   padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+                    color: APPColors.navBackgroundColor,
+                    border: Border(bottom: BorderSide(color: APPColors.contentBorderColor)),
                   ),
                   child: Row(
                     children: [

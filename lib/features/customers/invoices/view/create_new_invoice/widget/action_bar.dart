@@ -21,7 +21,7 @@ class ActionBar extends StatelessWidget {
               title: "Confirm",
               backgroundColor: APPColors.btnPurple,
               textColor: Colors.white,
-              padding: AppButtonSize.btnPaddingSymm,
+              padding: AppButtons.btnPaddingSymm,
               onPressed: () {
              
                 controller.postEntry();
@@ -33,7 +33,7 @@ class ActionBar extends StatelessWidget {
               title: "Cancel",
               backgroundColor: APPColors.btnGrey,
               textColor: Colors.black,
-              padding: AppButtonSize.btnPaddingSymm,
+              padding: AppButtons.btnPaddingSymm,
             ),
           ],
         ),
@@ -41,7 +41,7 @@ class ActionBar extends StatelessWidget {
         CustomButton(
           title: "Draft",
           backgroundColor: APPColors.btnGrey,
-          padding: AppButtonSize.btnPaddingSymm,
+          padding: AppButtons.btnPaddingSymm,
         ),
       ],
     );

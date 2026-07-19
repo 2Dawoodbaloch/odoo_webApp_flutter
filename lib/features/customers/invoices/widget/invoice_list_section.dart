@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/features/customers/invoices/controller/controller.dart';
 import 'package:flutter_odoo/features/accounting/view/widgets/empty_state_view.dart';
+import 'package:flutter_odoo/utils/constants/app_spacing.dart';
+import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:get/get.dart';
 
 class InvoiceListSection extends StatelessWidget {
@@ -15,9 +17,10 @@ class InvoiceListSection extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+          padding: AppSpacing.listTableRowPadding,
           decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
+            color: APPColors.bodyBackgroundColor,
+            border: Border.all(color: APPColors.contentBorderColor),
           ),
           child: Row(
             children: [
@@ -44,9 +47,10 @@ class InvoiceListSection extends StatelessWidget {
               itemBuilder: (context, index) {
                 final entry = controller.entries[index];
                 return Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  padding: AppSpacing.listTableRowPadding,
                   decoration: BoxDecoration(
-                    border: Border(bottom: BorderSide(color: Colors.grey.shade200)),
+                     color: APPColors.navBackgroundColor,
+                    border: Border(bottom: BorderSide(color: APPColors.contentBorderColor)),
                   ),
                   child: Row(
                     children: [

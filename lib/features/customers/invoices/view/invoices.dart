@@ -43,49 +43,52 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
 
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: APPColors.white,
+      backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: Column(
-          children: [
-            // ACCOUNTING NAVBAR
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.md),
-        
-            // NAVBAR
-            BreadcrumbBar(
-              title: "Invoices",
-              icon: Icons.settings,
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.createInvoices);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
-                const SizedBox(width: 8),
-                CustomButton(
-                  title: "Upload",
-                  onPressed: () {},
-                  backgroundColor: APPColors.btnGrey,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  textColor: APPColors.black,
-                ),
-              ],
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+
+                  // NAVBAR
+                  BreadcrumbBar(
+                    title: "Invoices",
+                    icon: Icons.settings,
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        onPressed: () {
+                          Get.toNamed(RoutesName.createInvoices);
+                        },
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                      const SizedBox(width: 8),
+                      CustomButton(
+                        title: "Upload",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnGrey,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.black,
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+                ],
+              ),
             ),
-        
-            SizedBox(height: AppSpacing.spaceBtwInputFields),
-            Divider(),
-        
-        
-            Expanded(child: InvoiceListSection()),
-        
-          ],
-        ),
+          ),
+          Expanded(child: InvoiceListSection()),
+        ],
       ),
     );
   }

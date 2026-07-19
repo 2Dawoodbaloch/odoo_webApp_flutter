@@ -3,12 +3,19 @@ import 'package:flutter/material.dart';
 class APPColors {
   APPColors._();
 
+  // Background colors
+  static const Color bodyBackgroundColor = Color(0xFFF5F5F5);
+  static const Color navBackgroundColor = Color(0xFFFFFFFF); // nav + breadcrumb
+  static const Color contentBackgroundColor = Color(0xFFFFFFFF);
+
+  // Border colors
+  static const Color contentBorderColor = Color(0xFFE0E0E0); // border color
+
   //button color
   static const Color btnGrey = Color(0xFFD8DADD);
   static const Color btnPurple = Color(0xFF52374B);
   static const Color btnMango = Color(0xFFF8D6C8);
   static const Color btnSky = Color(0xFFBBD7F8);
-  
 
   // ----- Primary Brand Colors -----
   static const Color primary = Color(0xFF714B67);
@@ -19,10 +26,10 @@ class APPColors {
   static const Color txtBlack = Color(0xFF1A1A1A);
   static const Color textSecondary = Color(0xFF6C757D);
   static const Color textLight = Color(0xFF9E9E9E);
- static const Color hintText = Color(0xFF9E9E9E);
+  static const Color hintText = Color(0xFF9E9E9E);
   static const Color textWhite = Colors.white;
 
-  // 
+  //
 
   // ----- Background Colors -----
   static const Color cardBackgroundColor = Color(0xD8DADD);
@@ -43,9 +50,9 @@ class APPColors {
   static const Color divider = Color(0xFFEEEEEE);
 
   // ----- Status / Tag Colors -----
-  static const Color statusActive = Color(0xFF4CAF50);   // Green
+  static const Color statusActive = Color(0xFF4CAF50); // Green
   static const Color statusPending = Color(0xFFFF9800); // Orange
-  static const Color statusDemo = Color(0xFF9E9E9E);    // Grey
+  static const Color statusDemo = Color(0xFF9E9E9E); // Grey
   static const Color statusInactive = Color(0xFFF44336); // Red
 
   // ----- Feedback Colors -----

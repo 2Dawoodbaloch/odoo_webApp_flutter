@@ -23,11 +23,10 @@ class ChartsOfAccountsFormFields extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
       padding: AppSpacing.bigContainer,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.grey.shade300),
+        color: APPColors.contentBackgroundColor,
+        border: Border.all(color: APPColors.contentBorderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -129,7 +128,7 @@ class ChartsOfAccountsFormFields extends StatelessWidget {
                   ],
                 ),
               ),
-        SizedBox(width: AppSpacing.spaceBtwRwCl),
+              SizedBox(width: AppSpacing.spaceBtwRwCl),
               // right section
               Expanded(
                 child: Column(
@@ -144,14 +143,20 @@ class ChartsOfAccountsFormFields extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: AppSpacing.spaceBtwInputFields),
-                    Obx(
-                      () => LabeledSwitchField(
-                        label: "Active",
-                        scale: 0.65,
-                        value: controller.isActive.value,
-                        onChanged: (value) => controller.isActive.value = value,
-                      ),
+                    Row(
+                      children: [
+                        TextWidget(text: "Active", labelWidth: 130,fontWeight: FontWeight.bold,),
+                        Obx(
+                          () => CustomSwitch(
+                            scale: 0.65,
+                            value: controller.isActive.value,
+                            onChanged: (value) =>
+                                controller.isActive.value = value,
+                          ),
+                        ),
+                      ],
                     ),
+                    SizedBox(height: AppSpacing.spaceBtwInputFields),
                     Row(
                       children: [
                         TextWidget(
@@ -192,12 +197,12 @@ class ChartsOfAccountsFormFields extends StatelessWidget {
                       color: APPColors.btnPurple,
                     ),
                     Divider(),
-                    SizedBox(height: AppSpacing.lg,),
+                    SizedBox(height: AppSpacing.lg),
                     CustomFormField(
                       hint: "write descriptin here Description",
                       controller: controller.descController,
                       enableBorder: true,
-                    )
+                    ),
                   ],
                 ),
               ),

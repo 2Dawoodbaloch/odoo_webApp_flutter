@@ -22,7 +22,7 @@ class HeaderInvoice extends StatelessWidget {
               title: "New",
               backgroundColor: APPColors.btnPurple,
               textColor: Colors.white,
-              padding: AppButtonSize.btnPaddingSymm,
+              padding: AppButtons.btnPaddingSymm,
             ),
             SizedBox(width: AppSpacing.spaceBtwInputFields),
             TextWidget(text: "Invoices", color: Colors.green),

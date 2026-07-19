@@ -43,38 +43,50 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
 
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: APPColors.white,
+      backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: Column(
-       
-          children: [
-            // ACCOUNTING NAVBAR
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.md),
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.md),
 
-            // NAVBAR
-            BreadcrumbBar(
-              title: "Customer Payments",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.newPayment);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
-              ],
+                  // NAVBAR
+                  BreadcrumbBar(
+                    title: "Customer Payments",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        onPressed: () {
+                          Get.toNamed(RoutesName.newPayment);
+                        },
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                    ],
+                  ),
+
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
+                ],
+              ),
             ),
+          ),
 
-            SizedBox(height: AppSpacing.spaceBtwInputFields),
-            Divider(),
-            Expanded(child: PaymentListSection()),
-          ],
-        ),
+          Divider(height: 1,),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: PaymentListSection(),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -86,7 +98,6 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Column(
-       
           children: [
             // ACCOUNTING NAVBAR
             HomeNavBar(),
@@ -102,7 +113,7 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
                     Get.toNamed(RoutesName.newPayment);
                   },
                   backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
+                  padding: AppButtons.btnPaddingSymm,
                   textColor: APPColors.white,
                 ),
               ],
@@ -124,7 +135,6 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
         child: Column(
-       
           children: [
             // ACCOUNTING NAVBAR
             HomeNavBar(),
@@ -140,7 +150,7 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
                     Get.toNamed(RoutesName.newPayment);
                   },
                   backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
+                  padding: AppButtons.btnPaddingSymm,
                   textColor: APPColors.white,
                 ),
               ],

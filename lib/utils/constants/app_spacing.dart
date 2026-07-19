@@ -13,15 +13,15 @@ class AppSpacing {
   static const double xxl = 40;
 
   // static const double spaceBtwEntries = 8;
-    static const double spaceBtwInputFields = 8;
+  static const double spaceBtwInputFields = 8;
 
-/// Space between the top navigation bar and the breadcrumb/page-title row below it.
+  /// Space between the top navigation bar and the breadcrumb/page-title row below it.
   static const double navToBreadcrumbGap = 14;
 
   /// Space between the breadcrumb/page-title row and the main page content (list, form, table).
   static const double breadcrumbToContentGap = 8;
-    // space btw right and left columns in rows
-    static const double spaceBtwRwCl = 30;
+  // space btw right and left columns in rows
+  static const double spaceBtwRwCl = 30;
 
   // Screen padding
   static const EdgeInsets mobilePadding = EdgeInsets.all(16);
@@ -29,7 +29,7 @@ class AppSpacing {
   static const EdgeInsets tabletPadding = EdgeInsets.all(20);
 
   static const EdgeInsets desktopPadding = EdgeInsets.symmetric(
-    horizontal: 8,
+    horizontal: 10,
     vertical: 8,
   );
 
@@ -41,6 +41,10 @@ class AppSpacing {
   );
 
   static const EdgeInsets verticalPadding = EdgeInsets.symmetric(vertical: 16);
+
+
+  // container list section padding
+  static const EdgeInsets listTableRowPadding =  EdgeInsets.symmetric(horizontal: 12, vertical: 10);
 
   // container padding horizental + vertical
   static const EdgeInsets bigContainer = EdgeInsets.symmetric(

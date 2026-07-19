@@ -21,7 +21,6 @@ class CreateJournalEntries extends StatefulWidget {
 class _JournalEntriesHomeState extends State<CreateJournalEntries> {
   final double labelwidth = 130;
 
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -46,6 +45,70 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
 
   Widget _desktopLayout() {
     return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  //top nav bar
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
+
+                  // HEADER
+                  BreadcrumbBar(
+                    title: "Journal Entries",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        backgroundColor: APPColors.btnPurple,
+                        textColor: APPColors.white,
+                        padding: AppButtons.btnPaddingSymm,
+                      ),
+                    ],
+                    icon: Icons.settings,
+                  ),
+
+                  SizedBox(height: AppSpacing.xs),
+                ],
+              ),
+            ),
+          ),
+          Divider(height: 1),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
+                    ActionBar(),
+
+                    SizedBox(height: AppSpacing.spaceBtwInputFields),
+
+                    // add journal entries
+                    AddInfoJournalEntries(),
+
+                    SizedBox(height: AppSpacing.lg),
+                    SecondFooter(),
+                    SizedBox(height: AppSpacing.lg),
+                    AppFooter(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _tabletLayout() {
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
@@ -65,7 +128,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
                     title: "New",
                     backgroundColor: APPColors.btnPurple,
                     textColor: APPColors.white,
-                    padding: AppButtonSize.btnPaddingSymm,
+                    padding: AppButtons.btnPaddingSymm,
                   ),
                 ],
                 icon: Icons.settings,
@@ -77,56 +140,6 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
 
               // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
               ActionBar(),
-
-              SizedBox(height: AppSpacing.spaceBtwInputFields),
-
-              // add journal entries
-              AddInfoJournalEntries(),
-
-              SizedBox(height: AppSpacing.lg),
-              SecondFooter(),
-              SizedBox(height: AppSpacing.lg),
-              AppFooter(),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
-  Widget _tabletLayout() {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: AppSpacing.desktopPadding,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //top nav bar
-               HomeNavBar(),
-              SizedBox(height: AppSpacing.spaceBtwInputFields),
-
-              // HEADER
-              BreadcrumbBar(
-                title: "Journal Entries",
-                actions: [
-                  CustomButton(
-                    title: "New",
-                    backgroundColor: APPColors.btnPurple,
-                    textColor: APPColors.white,
-                    padding: AppButtonSize.btnPaddingSymm,
-                  ),
-                ],
-                icon: Icons.settings,
-              ),
-
-              SizedBox(height: AppSpacing.xs),
-
-              Divider(),
-
-              // HEADER REACTIVE BUTTONS / POST + DRAFT + CANCEL
-             ActionBar(),
               SizedBox(height: AppSpacing.spaceBtwInputFields),
 
               // add journal entries
@@ -164,7 +177,7 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
                     title: "New",
                     backgroundColor: APPColors.btnPurple,
                     textColor: APPColors.white,
-                    padding: AppButtonSize.btnPaddingSymm,
+                    padding: AppButtons.btnPaddingSymm,
                   ),
                 ],
                 icon: Icons.settings,

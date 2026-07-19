@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
-import 'package:flutter_odoo/comm/widgets/label_divider.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
-import 'package:flutter_odoo/features/accounting/view/widgets/dash_board_card.dart';
-import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
+import 'package:flutter_odoo/features/accounting/view/widgets/accounting_dashboard.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
@@ -44,180 +41,42 @@ class _AccountingHomeScreenState extends State<AccountingHomeScreen> {
   // Desktop Layout
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: APPColors.white,
+      backgroundColor: APPColors.bodyBackgroundColor,
 
       //navigation
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
 
-        child: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            children: [
-              // ACCOUNTING NAVBAR
-              HomeNavBar(),
-              SizedBox(height: AppSpacing.md),
-              // NAVBAR
-              BreadcrumbBar(title: "Accounting",),
-              SizedBox(height: AppSpacing.spaceBtwInputFields),
-              Divider(),
-              SizedBox(height: AppSpacing.lg),
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.md),
+                  // NAVBAR
+                  BreadcrumbBar(title: "Accounting"),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-              // Card Screen
+                  // Card Screen
 
-              // Row first
-              Padding(
-                padding: AppSpacing.horizontalPadding,
-                child: Column(
-                  children: [
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DashboardCard(
-                            title: "Sales",
-                            description:
-                                "Get Paid online. Send electronic invoices.",
-
-                            button: CustomButton(
-                              title: "New",
-                              backgroundColor: APPColors.btnPurple,
-                              textColor: APPColors.white,
-                            ),
-                            body: Center(
-                              child: Image.asset(
-                                height: 100,
-                                "assets/images/chart.png",
-                                width: double.infinity,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: AppSpacing.md),
-                        Expanded(
-                          child: DashboardCard(
-                            title: "Purchases",
-                            description:
-                                "Let Artificial Intelligence scan your bill. Pay easily",
-                            button: CustomButton(
-                              title: "Upload",
-                              backgroundColor: APPColors.btnPurple,
-                              textColor: APPColors.white,
-                            ),
-                            body: Expanded(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceAround,
-                                children: [
-                                  Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              "assets/images/gemini.png",
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(height: AppSpacing.md),
-                                      CustomButton(
-                                        title: "upload",
-                                        backgroundColor: APPColors.btnPurple,
-                                        textColor: APPColors.white,
-                                      ),
-                                    ],
-                                  ),
-
-                                  LabeledDivider(label: "OR", isVertical: true),
-
-                                  Column(
-                                    children: [
-                                      Container(
-                                        height: 60,
-                                        width: 60,
-                                        decoration: BoxDecoration(
-                                          image: DecorationImage(
-                                            image: AssetImage(
-                                              "assets/images/message.png",
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      SizedBox(height: AppSpacing.md),
-                                      TextWidget(
-                                        text: "Create a bill manually",
-                                        color: Colors.green,
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: AppSpacing.md),
-
-                    // 2nd Row
-                    // 2nd Row
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DashboardCard(
-                            title: "Sales",
-                            description:
-                                "Get Paid online. Send electronic invoices.",
-
-                            button: CustomButton(
-                              title: "New",
-                              backgroundColor: APPColors.btnPurple,
-                              textColor: APPColors.white,
-                            ),
-                            body: Center(child: Text("Search Over 600 Banks")),
-                          ),
-                        ),
-                        SizedBox(width: AppSpacing.md),
-                        Expanded(
-                          child: DashboardCard(
-                            title: "Tax Return",
-                            description: "let we help you in tax return",
-                            button: CustomButton(
-                              title: "Tex Return",
-                              backgroundColor: APPColors.btnPurple,
-                              textColor: APPColors.white,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: AppSpacing.md),
-                    // 3rd Row
-                    Row(
-                      children: [
-                        Expanded(
-                          child: DashboardCard(
-                            title: "Salaries",
-                            description: "let we help you in tax return",
-                            button: CustomButton(
-                              title: "Tex Return",
-                              backgroundColor: APPColors.btnPurple,
-                              textColor: APPColors.white,
-                            ),
-                          ),
-                        ),
-
-                        Expanded(child: Container()),
-                      ],
-                    ),
-                  ],
-                ),
+                  // Row first
+                ], // 2nd Row
               ),
-            ], // 2nd Row
+            ),
           ),
-        ),
+          Divider(height: 1),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(children: [AccountingDashBoard()]),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

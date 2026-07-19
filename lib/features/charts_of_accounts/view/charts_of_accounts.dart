@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/features/charts_of_accounts/widget/charts_list_section.dart';
-import 'package:flutter_odoo/features/customers/payments/widget/payment_list_section.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
@@ -44,36 +42,44 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
 
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: APPColors.white,
+      backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-        child: Column(
-          children: [
-            // ACCOUNTING NAVBAR
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.navToBreadcrumbGap),
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
-            // NAVBAR
-            BreadcrumbBar(
-              title: "Charts of Accounts",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.createChartsAccounts);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtonSize.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
-              ],
+                  // NAVBAR
+                  BreadcrumbBar(
+                    title: "Charts of Accounts",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        onPressed: () {
+                          Get.toNamed(RoutesName.createChartsAccounts);
+                        },
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+      
+                ],
+              ),
             ),
-            SizedBox(height: AppSpacing.breadcrumbToContentGap),
-            Divider(),
-            Expanded(child: ChartsListSection()),
-          ],
-        ),
+          ),
+
+          Expanded(child: ChartsListSection()),
+        ],
       ),
     );
   }

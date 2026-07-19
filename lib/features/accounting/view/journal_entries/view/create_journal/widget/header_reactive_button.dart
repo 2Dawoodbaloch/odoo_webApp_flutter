@@ -28,7 +28,7 @@ class ActionBar extends StatelessWidget {
               title: "Post",
               backgroundColor: APPColors.btnPurple,
               textColor: APPColors.white,
-              padding: AppButtonSize.btnPaddingSymm,
+              padding: AppButtons.btnPaddingSymm,
               onPressed: () {
                 controller.postEntry();
                 Get.back(); // return to Home screen
@@ -39,14 +39,14 @@ class ActionBar extends StatelessWidget {
               title: "Cancel",
               backgroundColor: APPColors.btnGrey,
               textColor: Colors.black,
-              padding: AppButtonSize.btnPaddingSymm,
+              padding: AppButtons.btnPaddingSymm,
             ),
           ],
         ),
         CustomButton(
           title: "Draft",
           backgroundColor: APPColors.btnGrey,
-          padding: AppButtonSize.btnPaddingSymm,
+          padding: AppButtons.btnPaddingSymm,
         ),
       ],
     );

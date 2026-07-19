@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/comm/widgets/app_footer.dart';
+import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/second_footer.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/customer_invoice.dart';
-import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/invoice_header.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/action_bar.dart';
+import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
@@ -17,7 +19,6 @@ class CreateInvoice extends StatefulWidget {
 }
 
 class _CreateInvoiceState extends State<CreateInvoice> {
-
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -43,36 +44,48 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   // Desktop Layout
   Widget _desktopLayout() {
     return Scaffold(
-      backgroundColor: APPColors.white,
-
+      backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
-      body: Padding(
-        padding: AppSpacing.desktopPadding,
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
 
-        child: Column(
-          children: [
-            // ACCOUNTING NAVBAR
-            HomeNavBar(),
-            SizedBox(height: AppSpacing.md),
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
-            // NAVBAR/ Header
-            HeaderInvoice(),
-
-            SizedBox(height: AppSpacing.spaceBtwInputFields),
-            Divider(),
-            SizedBox(height: AppSpacing.xxs),
-
-            // 2nd  confirm + draft button
-            ActionBar(),
-
-            SizedBox(height: AppSpacing.spaceBtwInputFields),
-
-            Expanded(
+                  // NAVBAR/ Header
+                  BreadcrumbBar(
+                    title: "Invoices",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        padding: AppButtons.btnPaddingSymm,
+                      ),
+                      CustomButton(title: "invoice", textColor: Colors.green),
+                    ],
+                    icon: Icons.settings,
+                  ),
+                ], // 2nd Row
+              ),
+            ),
+          ),
+          Divider(height: 1,),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
               child: SingleChildScrollView(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-
+                    // 2nd  confirm + draft button
+                    ActionBar(),
+                    SizedBox(height: AppSpacing.sm,),
                     // Customer Invoice section
                     CustomerInvoice(),
                     SizedBox(height: AppSpacing.lg),
@@ -86,8 +99,8 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                 ),
               ),
             ),
-          ], // 2nd Row
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -100,5 +113,3 @@ class _CreateInvoiceState extends State<CreateInvoice> {
     return Scaffold();
   }
 }
-
-

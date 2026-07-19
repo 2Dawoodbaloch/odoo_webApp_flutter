@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
-import 'package:flutter_odoo/comm/widgets/app_footer.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
-import 'package:flutter_odoo/comm/widgets/second_footer.dart';
-import 'package:flutter_odoo/features/charts_of_accounts/view/create_charts_of_accounts/widget/breadcrumber_breadcrumber.dart';
-import 'package:flutter_odoo/features/charts_of_accounts/view/create_charts_of_accounts/widget/chartsof_account_formfields.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
 
-class CreateChartsOfAccount extends StatelessWidget {
-  const CreateChartsOfAccount({super.key});
+class GeneralLedgerHomeScreen extends StatefulWidget {
+  const GeneralLedgerHomeScreen({super.key});
 
+  @override
+  State<GeneralLedgerHomeScreen> createState() =>
+      _GeneralLedgerHomeScreenState();
+}
+
+class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
@@ -38,48 +39,47 @@ class CreateChartsOfAccount extends StatelessWidget {
     );
   }
 
-  // Desktop Layout
   Widget _desktopLayout() {
     return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       body: Column(
         children: [
-          // ✅ White zone: nav + breadcrumb + their surrounding padding
           Container(
-            color: APPColors.navBackgroundColor,
+            color: APPColors
+                .navBackgroundColor, 
             child: Padding(
-              padding: AppSpacing.desktopPadding,
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
-                  ChartsBreadCrumber(),
+                  BreadcrumbBar(
+                    title: "General Ledger",
+                    actions: [
+                      CustomButton(
+                        title: "PDF",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                      SizedBox(width: AppSpacing.xs),
+                      CustomButton(
+                        title: "XLXS",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnGrey,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.black,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
                 ],
               ),
             ),
           ),
-
-          const Divider(height: 1,),
-
-        
-          Expanded(
-            child: Padding(
-              padding: AppSpacing.desktopPadding,
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(height: AppSpacing.breadcrumbToContentGap),
-                    ChartsOfAccountsFormFields(),
-                    SizedBox(height: AppSpacing.lg),
-                    SecondFooter(),
-                    SizedBox(height: AppSpacing.lg),
-                    AppFooter(),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          const Divider(height: 1),
+         
         ],
       ),
     );

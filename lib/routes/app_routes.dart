@@ -17,6 +17,7 @@ import 'package:flutter_odoo/features/customers/payments/view/new_payment_screen
 import 'package:flutter_odoo/features/customers/payments/view/payment_home_screen.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/create_new_employee_screen.dart';
 import 'package:flutter_odoo/features/employee/view/employee_home_screen.dart';
+import 'package:flutter_odoo/features/general_ledger/view/general_ledger_home.dart';
 import 'package:flutter_odoo/home.dart';
 import 'package:get/get.dart';
 import 'package:flutter_odoo/routes/routes_name.dart';
@@ -26,6 +27,8 @@ class AppRouter {
 
   static final List<GetPage> pages = [
     GetPage(name: RoutesName.home, page: () => const HomeScreen()),
+
+    // employee home
     GetPage(
       name: RoutesName.employeeHome,
       page: () => const EmployeeHomeScreen(),
@@ -35,11 +38,11 @@ class AppRouter {
       page: () => const CreaateNewEmployeeScreen(),
     ),
 
+    // accounting home // dashboard
     GetPage(
       name: RoutesName.accountingHome,
       page: () => const AccountingHomeScreen(),
     ),
-
 
     // Customer Invoices
     GetPage(
@@ -53,12 +56,11 @@ class AppRouter {
       binding: CreateInvoiceBinding(),
     ),
 
-
     // Accounting Journals
     GetPage(
       name: RoutesName.journalEntries,
       page: () => const JournalEntriesHome(),
-      binding: JournalBinding()
+      binding: JournalBinding(),
     ),
     GetPage(
       name: RoutesName.createJournalEntries,
@@ -70,25 +72,31 @@ class AppRouter {
     GetPage(
       name: RoutesName.chartsAccount,
       page: () => const ChartsOfAccounts(),
-      binding: ChartsOfAccountBinding()
-      
+      binding: ChartsOfAccountBinding(),
     ),
     GetPage(
       name: RoutesName.createChartsAccounts,
       page: () => const CreateChartsOfAccount(),
-      binding: CreateChartsofAccountBinding()
+      binding: CreateChartsofAccountBinding(),
     ),
 
     // customer payments
     GetPage(
       name: RoutesName.customerPayments,
       page: () => const PaymentHomeScreen(),
-      binding: PaymentBinding()
+      binding: PaymentBinding(),
     ),
 
     GetPage(
       name: RoutesName.newPayment,
       page: () => const NewPaymentHomeScreen(),
+      binding: AddPaymentBinding(),
+    ),
+
+    // general ledger
+    GetPage(
+      name: RoutesName.generalLedger,
+      page: () => const GeneralLedgerHomeScreen(),
       binding: AddPaymentBinding(),
     ),
   ];

@@ -10,6 +10,7 @@ import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/searchable_drop_down_menu.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
+import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:get/get.dart'; // ✅ single import covers Get.find, Obx, GetxController, everything
 
 class CustomerInvoice extends StatelessWidget {
@@ -24,8 +25,8 @@ class CustomerInvoice extends StatelessWidget {
       width: double.infinity,
       padding: AppSpacing.bigContainer,
       decoration: BoxDecoration(
-        color: Colors.white,
-        border: Border.all(color: Colors.grey.shade300),
+        color: APPColors.white,
+        border: Border.all(color: APPColors.contentBorderColor),
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
