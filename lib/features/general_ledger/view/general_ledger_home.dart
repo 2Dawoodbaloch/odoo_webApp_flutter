@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
+import 'package:flutter_odoo/features/general_ledger/widget/general_ledger_totall_row.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
@@ -45,8 +46,7 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
       body: Column(
         children: [
           Container(
-            color: APPColors
-                .navBackgroundColor, 
+            color: APPColors.navBackgroundColor,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
               child: Column(
@@ -79,17 +79,135 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
             ),
           ),
           const Divider(height: 1),
-         
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 200),
+            child: SingleChildScrollView(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: APPColors.navBackgroundColor,
+                  border: Border.all(color: APPColors.contentBorderColor),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const GeneralLedgerTotalRow(),
+              ),
+            ),
+          ),
         ],
       ),
     );
   }
 
   Widget _tabletLayout() {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.tabletPadding,
+              child: Column(
+                children: [
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  BreadcrumbBar(
+                    title: "General Ledger",
+                    actions: [
+                      CustomButton(
+                        title: "PDF",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                      SizedBox(width: AppSpacing.xs),
+                      CustomButton(
+                        title: "XLXS",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnGrey,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.black,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+                ],
+              ),
+            ),
+          ),
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 200),
+            child: SingleChildScrollView(
+              child: Container(
+                decoration: BoxDecoration(
+                 color: APPColors.navBackgroundColor,
+                  border: Border.all(color: APPColors.contentBorderColor),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const GeneralLedgerTotalRow(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _mobileLayout() {
-    return Scaffold();
+     return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.mobilePadding,
+              child: Column(
+                children: [
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  BreadcrumbBar(
+                    title: "General Ledger",
+                    actions: [
+                      CustomButton(
+                        title: "PDF",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                      SizedBox(width: AppSpacing.xs),
+                      CustomButton(
+                        title: "XLXS",
+                        onPressed: () {},
+                        backgroundColor: APPColors.btnGrey,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.black,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+                ],
+              ),
+            ),
+          ),
+          const Divider(height: 1),
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 200),
+            child: SingleChildScrollView(
+              child: Container(
+                decoration: BoxDecoration(
+               color: APPColors.navBackgroundColor,
+                  border: Border.all(color: APPColors.contentBorderColor),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: const GeneralLedgerTotalRow(),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
