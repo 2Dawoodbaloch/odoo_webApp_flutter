@@ -83,11 +83,87 @@ class _AccountingHomeScreenState extends State<AccountingHomeScreen> {
 
   // TABLET LAYOUT
   Widget _tabletLayout() {
-    return Column(children: []);
+    return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.md),
+                  // NAVBAR
+                  BreadcrumbBar(title: "Accounting"),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
+
+                  // Card Screen
+
+                  // Row first
+                ], // 2nd Row
+              ),
+            ),
+          ),
+          Divider(height: 1),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(children: [AccountingDashBoard()]),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   // MOBILE LAYOUT
   Widget _mobileLayout() {
-    return Column(children: []);
+    return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.md),
+                  // NAVBAR
+                  BreadcrumbBar(title: "Accounting"),
+                  SizedBox(height: AppSpacing.spaceBtwInputFields),
+
+                  // Card Screen
+
+                  // Row first
+                ], // 2nd Row
+              ),
+            ),
+          ),
+          Divider(height: 1),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(children: [AccountingDashBoard()]),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

@@ -86,10 +86,94 @@ class CreateChartsOfAccount extends StatelessWidget {
   }
 
   Widget _tabletLayout() {
-    return Scaffold();
+      return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          // ✅ White zone: nav + breadcrumb + their surrounding padding
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                children: [
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  ChartsBreadCrumber(),
+                ],
+              ),
+            ),
+          ),
+
+          const Divider(height: 1,),
+
+        
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: AppSpacing.breadcrumbToContentGap),
+                    ChartsOfAccountsFormFields(),
+                    SizedBox(height: AppSpacing.lg),
+                    SecondFooter(),
+                    SizedBox(height: AppSpacing.lg),
+                    AppFooter(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _mobileLayout() {
-    return Scaffold();
+      return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      body: Column(
+        children: [
+          // ✅ White zone: nav + breadcrumb + their surrounding padding
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: Column(
+                children: [
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  ChartsBreadCrumber(),
+                ],
+              ),
+            ),
+          ),
+
+          const Divider(height: 1,),
+
+        
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: AppSpacing.breadcrumbToContentGap),
+                    ChartsOfAccountsFormFields(),
+                    SizedBox(height: AppSpacing.lg),
+                    SecondFooter(),
+                    SizedBox(height: AppSpacing.lg),
+                    AppFooter(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

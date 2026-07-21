@@ -3,18 +3,46 @@ import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/model/navbar/accounting_menus.dart';
 import 'package:flutter_odoo/comm/model/navbar/nav_menu_button.dart';
 import 'package:flutter_odoo/features/employee/create_new_empoyee/widgets/text_widget.dart';
-import 'package:flutter_odoo/utils/constants/app_icon_size.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
+import 'package:flutter_odoo/utils/constants/responsiveness/responsiveness.dart';
+import 'package:flutter_odoo/utils/constants/responsiveness/responsiveness_extention.dart';
 
 class HomeNavBar extends StatelessWidget {
-  const HomeNavBar({super.key, });
+  const HomeNavBar({super.key});
 
   // final BuildContext context;
 
   @override
   Widget build(BuildContext context) {
+    final isMobile = context.screenType == AppScreenType.mobile;
+
+    if (isMobile) {
+      return Row(
+        mainAxisAlignment: MainAxisAlignment
+            .spaceBetween, // ✅ needed to push right section to the end
+        children: [
+          Row(
+            children: [
+              Builder(
+                builder: (context) => IconButton(
+                  icon: const Icon(Icons.menu),
+                  onPressed: () => Scaffold.of(context).openDrawer(),
+                ),
+              ),
+              const Text(
+                "Accounting",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+          _RightSectionNavBar(), // ✅ same right section, now included on mobile too
+        ],
+      );
+    }
+
+    // left section
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -55,49 +83,23 @@ class HomeNavBar extends StatelessWidget {
           ],
         ),
 
-        // Left Section
-        Row(
-          children: [
-            // Container(
-            //   height: 40,
-            //   width: 40,
-            //   decoration: BoxDecoration(
-            //     image: DecorationImage(
-            //       image: AssetImage("assets/images/logo.png"),
-            //       fit: BoxFit.contain
-            //     ),
-            //   ),
-            // ),
-            
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.ac_unit_sharp,
-                color: Colors.red,
-                size: AppIconSize.md,
-              ),
-            ),
-         
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.local_dining_outlined, size: AppIconSize.md,),
-            ),
-          
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.messenger_sharp, size: AppIconSize.md,),
-            ),
-          
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings, size: AppIconSize.md,),
-            ),
-        
-            TextWidget(text: "Raptor Eye"),
-            SizedBox(width: AppSpacing.xs),
-            CustomButton(title: "M", backgroundColor: APPColors.btnSky),
-          ],
-        ),
+        // Right section Section nav
+        _RightSectionNavBar(),
+      ],
+    );
+  }
+}
+
+class _RightSectionNavBar extends StatelessWidget {
+  const _RightSectionNavBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        TextWidget(text: "Raptor Eye"),
+        SizedBox(width: AppSpacing.xs),
+        CustomButton(title: "M", backgroundColor: APPColors.btnSky),
       ],
     );
   }

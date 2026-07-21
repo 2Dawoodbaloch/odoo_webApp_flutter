@@ -106,10 +106,128 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   }
 
   Widget _tabletLayout() {
-    return Scaffold();
+      return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+
+                  // NAVBAR/ Header
+                  BreadcrumbBar(
+                    title: "Invoices",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        padding: AppButtons.btnPaddingSymm,
+                      ),
+                      CustomButton(title: "invoice", textColor: Colors.green),
+                    ],
+                    icon: Icons.settings,
+                  ),
+                ], // 2nd Row
+              ),
+            ),
+          ),
+          Divider(height: 1,),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 2nd  confirm + draft button
+                    ActionBar(),
+                    SizedBox(height: AppSpacing.sm,),
+                    // Customer Invoice section
+                    CustomerInvoice(),
+                    SizedBox(height: AppSpacing.lg),
+                    // send message + log note + activity
+                    SecondFooter(),
+                    SizedBox(height: AppSpacing.lg),
+
+                    // footer
+                    AppFooter(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 
   Widget _mobileLayout() {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+
+                  // NAVBAR/ Header
+                  BreadcrumbBar(
+                    title: "Invoices",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        padding: AppButtons.btnPaddingSymm,
+                      ),
+                      CustomButton(title: "invoice", textColor: Colors.green),
+                    ],
+                    icon: Icons.settings,
+                  ),
+                ], // 2nd Row
+              ),
+            ),
+          ),
+          Divider(height: 1,),
+          Expanded(
+            child: Padding(
+              padding: AppSpacing.desktopPadding,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    // 2nd  confirm + draft button
+                    ActionBar(),
+                    SizedBox(height: AppSpacing.sm,),
+                    // Customer Invoice section
+                    CustomerInvoice(),
+                    SizedBox(height: AppSpacing.lg),
+                    // send message + log note + activity
+                    SecondFooter(),
+                    SizedBox(height: AppSpacing.lg),
+
+                    // footer
+                    AppFooter(),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

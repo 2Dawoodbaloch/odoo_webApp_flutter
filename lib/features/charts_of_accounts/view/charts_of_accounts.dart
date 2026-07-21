@@ -85,10 +85,90 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
   }
 
   Widget _tabletLayout() {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+
+                  // NAVBAR
+                  BreadcrumbBar(
+                    title: "Charts of Accounts",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        onPressed: () {
+                          Get.toNamed(RoutesName.createChartsAccounts);
+                        },
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+      
+                ],
+              ),
+            ),
+          ),
+
+          Expanded(child: ChartsListSection()),
+        ],
+      ),
+    );
   }
 
   Widget _mobileLayout() {
-    return Scaffold();
+ return Scaffold(
+      backgroundColor: APPColors.bodyBackgroundColor,
+      //navigation
+      body: Column(
+        children: [
+          Container(
+            color: APPColors.navBackgroundColor,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+              child: Column(
+                children: [
+                  // ACCOUNTING NAVBAR
+                  HomeNavBar(),
+                  SizedBox(height: AppSpacing.navToBreadcrumbGap),
+
+                  // NAVBAR
+                  BreadcrumbBar(
+                    title: "Charts of Accounts",
+                    actions: [
+                      CustomButton(
+                        title: "New",
+                        onPressed: () {
+                          Get.toNamed(RoutesName.createChartsAccounts);
+                        },
+                        backgroundColor: APPColors.btnPurple,
+                        padding: AppButtons.btnPaddingSymm,
+                        textColor: APPColors.white,
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: AppSpacing.breadcrumbToContentGap),
+      
+                ],
+              ),
+            ),
+          ),
+
+          Expanded(child: ChartsListSection()),
+        ],
+      ),
+    );
   }
 }

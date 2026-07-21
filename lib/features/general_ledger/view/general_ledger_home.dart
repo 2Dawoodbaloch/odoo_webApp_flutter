@@ -141,7 +141,7 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
             child: SingleChildScrollView(
               child: Container(
                 decoration: BoxDecoration(
-                 color: APPColors.navBackgroundColor,
+                  color: APPColors.navBackgroundColor,
                   border: Border.all(color: APPColors.contentBorderColor),
                   borderRadius: BorderRadius.circular(4),
                 ),
@@ -155,7 +155,7 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
   }
 
   Widget _mobileLayout() {
-     return Scaffold(
+    return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       body: Column(
         children: [
@@ -198,7 +198,7 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
             child: SingleChildScrollView(
               child: Container(
                 decoration: BoxDecoration(
-               color: APPColors.navBackgroundColor,
+                  color: APPColors.navBackgroundColor,
                   border: Border.all(color: APPColors.contentBorderColor),
                   borderRadius: BorderRadius.circular(4),
                 ),

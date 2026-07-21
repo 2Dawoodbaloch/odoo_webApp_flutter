@@ -1,3 +1,6 @@
+// responsiveness
+
+
 enum Sex {
   male,
   female,
@@ -51,6 +54,5 @@ enum ScheduleType {
     }
   }
 }
-
 
 enum PaymentType { send, receive }
