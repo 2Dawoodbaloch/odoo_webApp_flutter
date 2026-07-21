@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/comm/widgets/app_footer.dart';
+import 'package:flutter_odoo/comm/widgets/custom_container.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/second_footer.dart';
@@ -53,15 +54,33 @@ class CreateChartsOfAccount extends StatelessWidget {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
-                  ChartsBreadCrumber(),
+                 BreadcrumbBar(
+                    title: "Draft Invoice",
+                    icon: Icons.settings,
+                    leftActions: [],
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
 
-          const Divider(height: 1,),
+          const Divider(height: 1),
 
-        
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -86,7 +105,7 @@ class CreateChartsOfAccount extends StatelessWidget {
   }
 
   Widget _tabletLayout() {
-      return Scaffold(
+    return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       body: Column(
         children: [
@@ -99,15 +118,33 @@ class CreateChartsOfAccount extends StatelessWidget {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
-                  ChartsBreadCrumber(),
+                  BreadcrumbBar(
+                    title: "Draft Invoice",
+                    icon: Icons.settings,
+                    leftActions: [],
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
 
-          const Divider(height: 1,),
+          const Divider(height: 1),
 
-        
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -132,7 +169,7 @@ class CreateChartsOfAccount extends StatelessWidget {
   }
 
   Widget _mobileLayout() {
-      return Scaffold(
+    return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       body: Column(
         children: [
@@ -145,15 +182,33 @@ class CreateChartsOfAccount extends StatelessWidget {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
-                  ChartsBreadCrumber(),
+                  BreadcrumbBar(
+                    title: "Chart of Account",
+                    icon: Icons.settings,
+                    leftActions: [],
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ),
 
-          const Divider(height: 1,),
+          const Divider(height: 1),
 
-        
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,

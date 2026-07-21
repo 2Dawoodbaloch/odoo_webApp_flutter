@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
@@ -52,13 +53,17 @@ class _EmployeeHomeScreenState extends State<EmployeeHomeScreen> {
          HomeNavBar(),
           //NAVBAR
           SizedBox(height: AppSpacing.spaceBtwInputFields),
-          BreadcrumbBar(title: "Employee",
-            actions: [
-            CustomButton(title: "Create",backgroundColor: APPColors.btnPurple,textColor: APPColors.white  ,onPressed: () {
-            Get.toNamed(RoutesName.createEmployee);
-            },)
-          ],),
-
+          // Breadcumbbar
+                  BreadcrumbBar(
+                    title: "Employee",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
+                    ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
+                  ),
           const SizedBox(height: 8),
           const Divider(),
 

@@ -20,8 +20,7 @@ class HomeNavBar extends StatelessWidget {
 
     if (isMobile) {
       return Row(
-        mainAxisAlignment: MainAxisAlignment
-            .spaceBetween, // ✅ needed to push right section to the end
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Row(
             children: [
@@ -37,7 +36,7 @@ class HomeNavBar extends StatelessWidget {
               ),
             ],
           ),
-          _RightSectionNavBar(), // ✅ same right section, now included on mobile too
+          _RightSectionNavBar(), 
         ],
       );
     }

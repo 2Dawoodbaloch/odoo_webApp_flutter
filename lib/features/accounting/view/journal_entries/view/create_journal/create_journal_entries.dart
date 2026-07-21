@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/app_footer.dart';
+import 'package:flutter_odoo/comm/widgets/custom_container.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
@@ -7,6 +8,7 @@ import 'package:flutter_odoo/comm/widgets/second_footer.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/widget/add_info_journal_entries.dart';
 import 'package:flutter_odoo/features/accounting/view/journal_entries/view/create_journal/widget/header_reactive_button.dart';
 import 'package:flutter_odoo/utils/constants/app_button_size.dart';
+import 'package:flutter_odoo/utils/constants/app_sizes.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
@@ -59,18 +61,32 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-                  // HEADER
                   BreadcrumbBar(
-                    title: "Journal Entries",
-                    actions: [
+                    title: "Draft entries",
+                    icon: Icons.settings,
+                    leftActions: [
                       CustomButton(
                         title: "New",
-                        backgroundColor: APPColors.btnPurple,
-                        textColor: APPColors.white,
-                        padding: AppButtons.btnPaddingSymm,
+                        borderWidth: 1,
+                        borderColor: APPColors.btnPurple,
+                        padding: AppSizes.buttonPaddingSm,
                       ),
                     ],
-                    icon: Icons.settings,
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
                   ),
 
                   SizedBox(height: AppSpacing.xs),
@@ -120,18 +136,25 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
               HomeNavBar(),
               SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-              // HEADER
               BreadcrumbBar(
-                title: "Journal Entries",
-                actions: [
-                  CustomButton(
-                    title: "New",
-                    backgroundColor: APPColors.btnPurple,
-                    textColor: APPColors.white,
-                    padding: AppButtons.btnPaddingSymm,
-                  ),
-                ],
+                title: "Draft Entries",
                 icon: Icons.settings,
+                leftActions: [],
+                showSearchBar: false,
+                rightSection: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CustomContainer(
+                      icon: Icons.cloud_upload_outlined,
+                      color: APPColors.btnGrey /* ... */,
+                    ),
+                    const SizedBox(width: 4),
+                    CustomContainer(
+                      icon: Icons.close,
+                      color: APPColors.btnGrey /* ... */,
+                    ),
+                  ],
+                ),
               ),
 
               SizedBox(height: AppSpacing.xs),
@@ -171,16 +194,24 @@ class _JournalEntriesHomeState extends State<CreateJournalEntries> {
 
               // HEADER
               BreadcrumbBar(
-                title: "Journal Entries",
-                actions: [
-                  CustomButton(
-                    title: "New",
-                    backgroundColor: APPColors.btnPurple,
-                    textColor: APPColors.white,
-                    padding: AppButtons.btnPaddingSymm,
-                  ),
-                ],
+                title: "Draft entries",
                 icon: Icons.settings,
+                leftActions: [],
+                showSearchBar: false,
+                rightSection: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    CustomContainer(
+                      icon: Icons.cloud_upload_outlined,
+                      color: APPColors.btnGrey /* ... */,
+                    ),
+                    const SizedBox(width: 4),
+                    CustomContainer(
+                      icon: Icons.close,
+                      color: APPColors.btnGrey /* ... */,
+                    ),
+                  ],
+                ),
               ),
 
               SizedBox(height: AppSpacing.xs),

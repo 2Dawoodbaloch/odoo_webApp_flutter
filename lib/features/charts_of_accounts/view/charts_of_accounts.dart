@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/features/charts_of_accounts/widget/charts_list_section.dart';
@@ -56,23 +57,18 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
-                  // NAVBAR
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "Charts of Accounts",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        onPressed: () {
-                          Get.toNamed(RoutesName.createChartsAccounts);
-                        },
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
-      
                 ],
               ),
             ),
@@ -101,22 +97,18 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
                   // NAVBAR
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "Charts of Accounts",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        onPressed: () {
-                          Get.toNamed(RoutesName.createChartsAccounts);
-                        },
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () => Get.toNamed(RoutesName.createChartsAccounts)),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
-      
                 ],
               ),
             ),
@@ -129,7 +121,7 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
   }
 
   Widget _mobileLayout() {
- return Scaffold(
+    return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
       body: Column(
@@ -144,23 +136,18 @@ class _ChartsOfAccountsState extends State<ChartsOfAccounts> {
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
-                  // NAVBAR
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "Charts of Accounts",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        onPressed: () {
-                          Get.toNamed(RoutesName.createChartsAccounts);
-                        },
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
-      
                 ],
               ),
             ),

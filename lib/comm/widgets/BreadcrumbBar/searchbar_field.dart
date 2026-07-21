@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_odoo/utils/constants/app_text_size.dart';
 
 class SearchBarfield extends StatelessWidget {
-  const SearchBarfield({
-    super.key,
-  });
+  const SearchBarfield({super.key, this.width});
+  final double? width;
 
   @override
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
-        width: 400,
+        width: width ?? 400,
         height: 30,
         child: TextField(
           decoration: InputDecoration(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
@@ -56,20 +57,19 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
                   SizedBox(height: AppSpacing.spaceBtwInputFields),
 
                   // HEADER
-                  BreadcrumbBar(
-                    title: "Journal Entries",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        backgroundColor: APPColors.btnPurple,
-                        textColor: APPColors.white,
-                        padding: AppButtons.btnPaddingSymm,
-                        onPressed: () =>
-                            Get.toNamed(RoutesName.createJournalEntries),
-                      ),
-                    ],
-                    icon: Icons.settings,
-                  ),
+                 BreadcrumbBar(
+              title: "Gerneral Entries",
+              icon: Icons.settings,
+              leftActions: [
+                CustomButton(
+                  title: "New",
+                  onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
+                ),
+                CustomButton(title: "Upload", onPressed: () {}),
+              ],
+              showSearchBar: true,
+              rightSection: const BreadcrumbRightSection(),
+            ),
 
                   SizedBox(height: AppSpacing.xs),
                 ],
@@ -100,19 +100,19 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
             HomeNavBar(),
             SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-            // HEADER
+            // Breadcumbbar
             BreadcrumbBar(
-              title: "Journal Entries",
-              actions: [
+              title: "Gerneral Entries",
+              icon: Icons.settings,
+              leftActions: [
                 CustomButton(
                   title: "New",
-                  backgroundColor: APPColors.btnPurple,
-                  textColor: APPColors.white,
-                  padding: AppButtons.btnPaddingSymm,
                   onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
                 ),
+                CustomButton(title: "Upload", onPressed: () {}),
               ],
-              icon: Icons.settings,
+              showSearchBar: true,
+              rightSection: const BreadcrumbRightSection(),
             ),
 
             SizedBox(height: AppSpacing.xs),
@@ -137,19 +137,16 @@ class _JournalEntriesHomeState extends State<JournalEntriesHome> {
             HomeNavBar(),
             SizedBox(height: AppSpacing.spaceBtwInputFields),
 
-            // HEADER
+            // Breadcumbbar
             BreadcrumbBar(
-              title: "Journal Entries",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  backgroundColor: APPColors.btnPurple,
-                  textColor: APPColors.white,
-                  padding: AppButtons.btnPaddingSymm,
-                  onPressed: () => Get.toNamed(RoutesName.createJournalEntries),
-                ),
-              ],
+              title: "General Entries",
               icon: Icons.settings,
+              leftActions: [
+                CustomButton(title: "New", onPressed: () {}),
+                CustomButton(title: "Upload", onPressed: () {}),
+              ],
+              showSearchBar: true,
+              rightSection: const BreadcrumbRightSection(),
             ),
 
             SizedBox(height: AppSpacing.xs),

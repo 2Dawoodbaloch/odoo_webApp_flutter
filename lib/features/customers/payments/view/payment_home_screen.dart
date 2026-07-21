@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
@@ -57,29 +58,24 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.md),
 
-                  // NAVBAR
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "Customer Payments",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        onPressed: () {
-                          Get.toNamed(RoutesName.newPayment);
-                        },
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed:() => Get.toNamed(RoutesName.newPayment)),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
-
                   SizedBox(height: AppSpacing.spaceBtwInputFields),
                 ],
               ),
             ),
           ),
 
-          Divider(height: 1,),
+          Divider(height: 1),
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -103,20 +99,16 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
             HomeNavBar(),
             SizedBox(height: AppSpacing.md),
 
-            // NAVBAR
+            // Breadcumbbar
             BreadcrumbBar(
-              title: "Customer Payments",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.newPayment);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtons.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
+              title: "Charts of Account",
+              icon: Icons.settings,
+              leftActions: [
+                CustomButton(title: "New", onPressed: () {}),
+                CustomButton(title: "Upload", onPressed: () {}),
               ],
+              showSearchBar: true,
+              rightSection: const BreadcrumbRightSection(),
             ),
 
             SizedBox(height: AppSpacing.spaceBtwInputFields),
@@ -141,19 +133,16 @@ class _PaymentHomeScreenState extends State<PaymentHomeScreen> {
             SizedBox(height: AppSpacing.md),
 
             // NAVBAR
+            // Breadcumbbar
             BreadcrumbBar(
-              title: "Customer Payments",
-              actions: [
-                CustomButton(
-                  title: "New",
-                  onPressed: () {
-                    Get.toNamed(RoutesName.newPayment);
-                  },
-                  backgroundColor: APPColors.btnPurple,
-                  padding: AppButtons.btnPaddingSymm,
-                  textColor: APPColors.white,
-                ),
+              title: "Payment",
+              icon: Icons.settings,
+              leftActions: [
+                CustomButton(title: "New", onPressed: () {}),
+                CustomButton(title: "Upload", onPressed: () {}),
               ],
+              showSearchBar: true,
+              rightSection: const BreadcrumbRightSection(),
             ),
 
             SizedBox(height: AppSpacing.spaceBtwInputFields),

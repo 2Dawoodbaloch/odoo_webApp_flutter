@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
 import 'package:flutter_odoo/comm/widgets/app_footer.dart';
+import 'package:flutter_odoo/comm/widgets/custom_container.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/second_footer.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/customer_invoice.dart';
 import 'package:flutter_odoo/features/customers/invoices/view/create_new_invoice/widget/action_bar.dart';
-import 'package:flutter_odoo/utils/constants/app_button_size.dart';
+import 'package:flutter_odoo/utils/constants/app_sizes.dart';
 import 'package:flutter_odoo/utils/constants/app_spacing.dart';
 import 'package:flutter_odoo/utils/constants/colors.dart';
 import 'package:flutter_odoo/utils/constants/screen_break_points.dart';
@@ -59,23 +60,39 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
 
-                  // NAVBAR/ Header
                   BreadcrumbBar(
-                    title: "Invoices",
-                    actions: [
+                    title: "Draft Invoice",
+                    icon: Icons.settings,
+                    leftActions: [
                       CustomButton(
                         title: "New",
-                        padding: AppButtons.btnPaddingSymm,
+                        borderColor: APPColors.btnPurple,
+                        padding: AppSizes.buttonPaddingSm,
                       ),
-                      CustomButton(title: "invoice", textColor: Colors.green),
                     ],
-                    icon: Icons.settings,
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                          width: 50,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                          width: 50,
+                        ),
+                      ],
+                    ),
                   ),
                 ], // 2nd Row
               ),
             ),
           ),
-          Divider(height: 1,),
+          Divider(height: 1),
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -85,7 +102,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   children: [
                     // 2nd  confirm + draft button
                     ActionBar(),
-                    SizedBox(height: AppSpacing.sm,),
+                    SizedBox(height: AppSpacing.sm),
                     // Customer Invoice section
                     CustomerInvoice(),
                     SizedBox(height: AppSpacing.lg),
@@ -106,7 +123,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
   }
 
   Widget _tabletLayout() {
-      return Scaffold(
+    return Scaffold(
       backgroundColor: APPColors.bodyBackgroundColor,
       //navigation
       body: Column(
@@ -124,21 +141,30 @@ class _CreateInvoiceState extends State<CreateInvoice> {
 
                   // NAVBAR/ Header
                   BreadcrumbBar(
-                    title: "Invoices",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        padding: AppButtons.btnPaddingSymm,
-                      ),
-                      CustomButton(title: "invoice", textColor: Colors.green),
-                    ],
+                    title: "Draft Invoice",
                     icon: Icons.settings,
+                    leftActions: [],
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
                   ),
                 ], // 2nd Row
               ),
             ),
           ),
-          Divider(height: 1,),
+          Divider(height: 1),
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -148,7 +174,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   children: [
                     // 2nd  confirm + draft button
                     ActionBar(),
-                    SizedBox(height: AppSpacing.sm,),
+                    SizedBox(height: AppSpacing.sm),
                     // Customer Invoice section
                     CustomerInvoice(),
                     SizedBox(height: AppSpacing.lg),
@@ -187,21 +213,30 @@ class _CreateInvoiceState extends State<CreateInvoice> {
 
                   // NAVBAR/ Header
                   BreadcrumbBar(
-                    title: "Invoices",
-                    actions: [
-                      CustomButton(
-                        title: "New",
-                        padding: AppButtons.btnPaddingSymm,
-                      ),
-                      CustomButton(title: "invoice", textColor: Colors.green),
-                    ],
+                    title: "Draft Invoice",
                     icon: Icons.settings,
+                    leftActions: [],
+                    showSearchBar: false,
+                    rightSection: Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        CustomContainer(
+                          icon: Icons.cloud_upload_outlined,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                        const SizedBox(width: 4),
+                        CustomContainer(
+                          icon: Icons.close,
+                          color: APPColors.btnGrey /* ... */,
+                        ),
+                      ],
+                    ),
                   ),
                 ], // 2nd Row
               ),
             ),
           ),
-          Divider(height: 1,),
+          Divider(height: 1),
           Expanded(
             child: Padding(
               padding: AppSpacing.desktopPadding,
@@ -211,7 +246,7 @@ class _CreateInvoiceState extends State<CreateInvoice> {
                   children: [
                     // 2nd  confirm + draft button
                     ActionBar(),
-                    SizedBox(height: AppSpacing.sm,),
+                    SizedBox(height: AppSpacing.sm),
                     // Customer Invoice section
                     CustomerInvoice(),
                     SizedBox(height: AppSpacing.lg),

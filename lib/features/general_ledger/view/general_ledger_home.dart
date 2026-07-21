@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/features/general_ledger/widget/general_ledger_totall_row.dart';
@@ -53,25 +54,16 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  // Breadcumbbar
                   BreadcrumbBar(
                     title: "General Ledger",
-                    actions: [
-                      CustomButton(
-                        title: "PDF",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
-                      SizedBox(width: AppSpacing.xs),
-                      CustomButton(
-                        title: "XLXS",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnGrey,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.black,
-                      ),
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
                 ],
@@ -110,25 +102,16 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "General Ledger",
-                    actions: [
-                      CustomButton(
-                        title: "PDF",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
-                      SizedBox(width: AppSpacing.xs),
-                      CustomButton(
-                        title: "XLXS",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnGrey,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.black,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
                 ],
@@ -167,25 +150,16 @@ class _GeneralLedgerHomeScreenState extends State<GeneralLedgerHomeScreen> {
                 children: [
                   HomeNavBar(),
                   SizedBox(height: AppSpacing.navToBreadcrumbGap),
+                  // Breadcumbbar
                   BreadcrumbBar(
-                    title: "General Ledger",
-                    actions: [
-                      CustomButton(
-                        title: "PDF",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnPurple,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.white,
-                      ),
-                      SizedBox(width: AppSpacing.xs),
-                      CustomButton(
-                        title: "XLXS",
-                        onPressed: () {},
-                        backgroundColor: APPColors.btnGrey,
-                        padding: AppButtons.btnPaddingSymm,
-                        textColor: APPColors.black,
-                      ),
+                    title: "Charts of Account",
+                    icon: Icons.settings,
+                    leftActions: [
+                      CustomButton(title: "New", onPressed: () {}),
+                      CustomButton(title: "Upload", onPressed: () {}),
                     ],
+                    showSearchBar: true,
+                    rightSection: const BreadcrumbRightSection(),
                   ),
                   SizedBox(height: AppSpacing.breadcrumbToContentGap),
                 ],
