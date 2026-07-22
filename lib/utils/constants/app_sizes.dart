@@ -18,61 +18,84 @@ class AppSizes {
   // ============================================================
   // ICON SIZES
   // ============================================================
-  static const double iconXs = 14.0;   // small inline icons (tooltip "?" etc.)
-  static const double iconSm = 16.0;   // suffix/prefix icons in form fields
-  static const double iconMd = 20.0;   // nav bar action icons (settings, message, clock)
-  static const double iconLg = 24.0;   // primary action icons
+  static const double iconXs = 14.0; // small inline icons (tooltip "?" etc.)
+  static const double iconSm = 16.0; // suffix/prefix icons in form fields
+  static const double iconMd =
+      20.0; // nav bar action icons (settings, message, clock)
+  static const double iconLg = 24.0; // primary action icons
 
   // ============================================================
   // FONT SIZES
   // ============================================================
-  static const double fontSizeXs = 12.0;   // header column labels, tags
-  static const double fontSizeSm = 13.0;   // table cell text, secondary labels
-  static const double fontSizeMd = 14.0;   // body text, form field text
-  static const double fontSizeLg = 16.0;   // section headers (ASSET VALUES, CURRENT VALUES)
-  static const double fontSizeXl = 20.0;   // page title (Chart of Accounts, Assets)
-  static const double fontSizeXxl = 28.0;  // large placeholder heading (e.g. Laptop iBook hint)
+  static const double fontSizeXs = 12.0; // header column labels, tags
+  static const double fontSizeSm = 13.0; // table cell text, secondary labels
+  static const double fontSizeMd = 14.0; // body text, form field text
+  static const double fontSizeLg =
+      16.0; // section headers (ASSET VALUES, CURRENT VALUES)
+  static const double fontSizeXl =
+      20.0; // page title (Chart of Accounts, Assets)
+  static const double fontSizeXxl =
+      28.0; // large placeholder heading (e.g. Laptop iBook hint)
 
   // ============================================================
   // NAV BAR
   // ============================================================
   static const double navBarHeight = 56.0;
   static const double navToBreadcrumbGap = 8.0;
-  static const double breadcrumbToContentGap = 16.0;
+  static const double breadcrumbToContentGap = 4.0;
 
   // ============================================================
   // BUTTON SIZES
   // ============================================================
-  static const double buttonHeightSm = 32.0;   // small toolbar buttons (Confirm, Compute Depreciation)
-  static const double buttonHeightMd = 40.0;   // standard action buttons (New, Post)
-  static const EdgeInsets buttonPaddingSm = EdgeInsets.symmetric(horizontal: 12, vertical: 6);
-  static const EdgeInsets buttonPaddingMd = EdgeInsets.symmetric(horizontal: 16, vertical: 10);
+  static const double buttonHeightSm =
+      32.0; // small toolbar buttons (Confirm, Compute Depreciation)
+  static const double buttonHeightMd =
+      40.0; // standard action buttons (New, Post)
+  static const EdgeInsets buttonPaddingSm = EdgeInsets.symmetric(
+    horizontal: 12,
+    vertical: 6,
+  );
+  static const EdgeInsets buttonPaddingMd = EdgeInsets.symmetric(
+    horizontal: 16,
+    vertical: 10,
+  );
   static const double buttonRadius = 4.0;
 
   // ============================================================
   // FORM FIELD / LABEL LAYOUT
   // ============================================================
-  static const double formLabelWidth = 130.0;      // fixed label column width (Asset Name, Date, etc.)
-  static const double formLabelWidthSm = 90.0;     // shorter label column (used for compact rows)
-  static const double formFieldSpacing = 8.0;      // gap between label and field
-  static const double formRowSpacing = 12.0;       // vertical gap between form rows
-  static const double formSectionSpacing = 24.0;   // gap between form sections (ASSET VALUES vs CURRENT VALUES)
+  static const double formLabelWidth =
+      130.0; // fixed label column width (Asset Name, Date, etc.)
+  static const double formLabelWidthSm =
+      90.0; // shorter label column (used for compact rows)
+  static const double formFieldSpacing = 8.0; // gap between label and field
+  static const double formRowSpacing = 12.0; // vertical gap between form rows
+  static const double formSectionSpacing =
+      24.0; // gap between form sections (ASSET VALUES vs CURRENT VALUES)
   static const EdgeInsets formFieldPadding = EdgeInsets.symmetric(vertical: 8);
 
   // ============================================================
   // TABLE / LIST VIEW (Chart of Accounts style)
   // ============================================================
-  static const double tableRowHeight = 48.0;             // fixed row height — every row same height regardless of content
+  static const double tableRowHeight =
+      48.0; // fixed row height — every row same height regardless of content
   static const double tableHeaderHeight = 44.0;
-  static const EdgeInsets tableRowPadding = EdgeInsets.symmetric(horizontal: 12, vertical: 10);
-  static const double tableCheckboxColumnWidth = 40.0;   // reserved space for row checkbox
+  static const EdgeInsets tableRowPadding = EdgeInsets.symmetric(
+    horizontal: 12,
+    vertical: 10,
+  );
+  static const double tableCheckboxColumnWidth =
+      40.0; // reserved space for row checkbox
   static const double tableBorderWidth = 1.0;
 
   // ============================================================
   // TAB BAR (Asset / Bills tabs)
   // ============================================================
   static const double tabBarHeight = 44.0;
-  static const EdgeInsets tabPadding = EdgeInsets.symmetric(horizontal: 16, vertical: 12);
+  static const EdgeInsets tabPadding = EdgeInsets.symmetric(
+    horizontal: 16,
+    vertical: 12,
+  );
   static const double tabIndicatorWidth = 3.0;
 
   // ============================================================
@@ -86,26 +109,29 @@ class AppSizes {
   static const EdgeInsets contentContainerPadding = EdgeInsets.all(20);
   static const double contentContainerRadius = 4.0;
   static const double contentContainerBorderWidth = 1.0;
-  static const EdgeInsets contentOuterMargin = EdgeInsets.all(24); // gap between container and grey page background
+  static const EdgeInsets contentOuterMargin = EdgeInsets.all(
+    24,
+  ); // gap between container and grey page background
 
   // ============================================================
   // SIDEBAR / SECTION DIVIDERS
   // ============================================================
-  static const double sectionHeaderSpacing = 6.0;   // gap between section title and its divider
-  static const double sectionContentSpacing = 16.0; // gap after divider before first field
-
+  static const double sectionHeaderSpacing =
+      6.0; // gap between section title and its divider
+  static const double sectionContentSpacing =
+      16.0; // gap after divider before first field
 
   //    // ============================================================
-//   //SCREEN PADDING — 
-//   // ============================================================
+  //   //SCREEN PADDING —
+  //   // ============================================================
 
   static EdgeInsets screenPadding(BuildContext context) {
-  return ResponsiveValue<EdgeInsets>(
-    mobile: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
-    tablet: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-    desktop: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-  ).resolve(context);
-}
+    return ResponsiveValue<EdgeInsets>(
+      mobile: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
+      tablet: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+      desktop: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+    ).resolve(context);
+  }
 }
 
 

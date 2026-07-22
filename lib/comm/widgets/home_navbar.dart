@@ -70,29 +70,29 @@ class HomeNavBar extends StatelessWidget {
             //   ),
             // ),
             
-            IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.ac_unit_sharp,
-                color: Colors.red,
-                size: AppIconSize.md,
-              ),
-            ),
+            // IconButton(
+            //   onPressed: () {},
+            //   icon: Icon(
+            //     Icons.ac_unit_sharp,
+            //     color: Colors.red,
+            //     size: AppIconSize.md,
+            //   ),
+            // ),
          
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.local_dining_outlined, size: AppIconSize.md,),
-            ),
+            // IconButton(
+            //   onPressed: () {},
+            //   icon: Icon(Icons.local_dining_outlined, size: AppIconSize.md,),
+            // ),
           
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.messenger_sharp, size: AppIconSize.md,),
-            ),
+            // IconButton(
+            //   onPressed: () {},
+            //   icon: Icon(Icons.messenger_sharp, size: AppIconSize.md,),
+            // ),
           
-            IconButton(
-              onPressed: () {},
-              icon: Icon(Icons.settings, size: AppIconSize.md,),
-            ),
+            // IconButton(
+            //   onPressed: () {},
+            //   icon: Icon(Icons.settings, size: AppIconSize.md,),
+            // ),
         
             TextWidget(text: "Raptor Eye"),
             SizedBox(width: AppSpacing.xs),

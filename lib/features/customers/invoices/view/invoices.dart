@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/breadcrumb_right_section.dart';
+import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/searchbar_field.dart';
 import 'package:flutter_odoo/comm/widgets/cutom_button.dart';
 import 'package:flutter_odoo/comm/widgets/home_navbar.dart';
 import 'package:flutter_odoo/comm/widgets/BreadcrumbBar/bread_crumb_Bar.dart';
@@ -64,9 +65,19 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
                     leftActions: [
                       CustomButton(
                         title: "New",
+                        backgroundColor: APPColors.btnPurple,
+                        textColor: APPColors.white,
+                        padding: AppSizes.buttonPaddingSm,
                         onPressed: () => Get.toNamed(RoutesName.createInvoices),
                       ),
-                      CustomButton(title: "Upload", onPressed: () {}),
+                       SizedBox(width: AppSizes.xs,),
+                      CustomButton(
+                        title: "Upload",
+                        backgroundColor: APPColors.btnGrey,
+                        textColor: APPColors.black,
+                        padding: AppSizes.buttonPaddingSm,
+                        onPressed: () {},
+                      ),
                     ],
                     showSearchBar: true,
                     rightSection: const BreadcrumbRightSection(),
@@ -106,14 +117,28 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
                     leftActions: [
                       CustomButton(
                         title: "New",
+                        backgroundColor: APPColors.btnPurple,
+                        textColor: APPColors.white,
+                        padding: AppSizes.buttonPaddingSm,
                         onPressed: () => Get.toNamed(RoutesName.createInvoices),
                       ),
-                      CustomButton(title: "Upload", onPressed: () {}),
+                       SizedBox(width: AppSizes.xs,),
+                      CustomButton(
+                        title: "Upload",
+                        backgroundColor: APPColors.btnGrey,
+                        textColor: APPColors.black,
+                        padding: AppSizes.buttonPaddingSm,
+                        onPressed: () {},
+                      ),
                     ],
-                    showSearchBar: true,
+                    showSearchBar: false,
                     rightSection: const BreadcrumbRightSection(),
                   ),
-
+                  SizedBox(height: AppSizes.sm),
+                  const SizedBox(
+                    width: double.infinity, // takes all available width
+                    child: SearchBarfield(),
+                  ),
                   SizedBox(height: AppSizes.breadcrumbToContentGap),
                 ],
               ),
@@ -149,12 +174,27 @@ class _CustomersInvoicesState extends State<CustomersInvoices> {
                     leftActions: [
                       CustomButton(
                         title: "New",
+                        backgroundColor: APPColors.btnPurple,
+                        textColor: APPColors.white,
+                        padding: AppSizes.buttonPaddingSm,
                         onPressed: () => Get.toNamed(RoutesName.createInvoices),
                       ),
-                      CustomButton(title: "Upload", onPressed: () {}),
+                      SizedBox(width: AppSizes.xs,),
+                      CustomButton(
+                        title: "Upload",
+                        backgroundColor: APPColors.btnGrey,
+                        textColor: APPColors.black,
+                        padding: AppSizes.buttonPaddingSm,
+                        onPressed: () {},
+                      ),
                     ],
-                    showSearchBar: true,
+                    showSearchBar: false,
                     rightSection: const BreadcrumbRightSection(),
+                  ),
+                  SizedBox(height: AppSizes.sm),
+                  const SizedBox(
+                    width: double.infinity, // takes all available width
+                    child: SearchBarfield(),
                   ),
 
                   SizedBox(height: AppSizes.breadcrumbToContentGap),
